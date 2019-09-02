@@ -24,6 +24,7 @@ axios.defaults.baseURL="http://127.0.0.1:8080/"
 Vue.prototype.axios=axios;
 
 
+
 new Vue({
   router,
   render: h => h(App)

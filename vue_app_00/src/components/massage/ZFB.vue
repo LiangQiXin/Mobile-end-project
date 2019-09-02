@@ -32,6 +32,7 @@ import TilteBar from "./common/TitleBar.vue"
 //2.引入底部导航条图片组件
 import TabBarIcon from "./common/TabBarIcon.vue"
 
+
 export default {
 	//2.注册组件
 	components:{

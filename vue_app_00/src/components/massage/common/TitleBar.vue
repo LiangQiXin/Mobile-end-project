@@ -15,11 +15,11 @@
 						<img :src="rightImg" alt="" slot="icon" style="width:25px;" @click="add">
 					
 						<img :src="rightImg2" alt="" slot="icon" style="width:25px;" @click="tasks">
-						
+			
+					
 				</div>	
 			</div>
 			<div>
-
 			</div>
 </div>
 </template>
