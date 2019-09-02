@@ -1,4 +1,5 @@
 <template>
+
   <div>
 			<div class="page-head">
 					<div class="page-middle">
@@ -10,18 +11,33 @@
 							<img :src="leftImg2" alt="" slot="icon" style="width:25px;">
 							</span>
 						</div>
-					<div class="page-footer">	
-				
+					  <div class="page1-footer">	
+				     
 						<img :src="rightImg" alt="" slot="icon" style="width:25px;" @click="add">
 					
-						<img :src="rightImg2" alt="" slot="icon" style="width:25px;" @click="tasks">
-			
-					
-				</div>	
-			</div>
+						<img :src="rightImg2" alt="" slot="icon" style="width:25px;margin-left:15px;" @click="tasks">
+						
+						</div>	
+			 </div>
 			<div>
-			</div>
+		</div>
+		<div class="page2-footer">
+       <div>
+				 <img src="../../../assets/saoMa.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/pay.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/qian.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/kabao.png" alt="">
+			 </div>
+		</div>
 </div>
+		
+		
 </template>
 <script>
 export default {
@@ -36,6 +52,7 @@ export default {
 }
 </script>
 <style scoped>
+/*导航栏样式*/
 .page-head{
 	display: flex;
 	position:fixed;
@@ -44,15 +61,31 @@ export default {
 	align-items: center;
 	justify-content:space-between;
 	background-color:#0082DF;
-	height:40px;
-	
+	height:50px;
+	position: relative;
 }
 .page-middle{
 	display: flex;
 	align-items:center;
 	margin-left:10px;
 }
-.page-footer{
+
+.page1-footer{
 	margin-right: 30px;
+	
 }
+/*底部功能*/
+.page2-footer{
+  display: flex;
+	align-items: center;
+	justify-content: space-around;
+ 	background-color:#0082DF;
+ z-index: 100px;
+ width:100%;
+
+}
+.page2-footer img{
+	width:38px;
+
+} 
 </style>>
