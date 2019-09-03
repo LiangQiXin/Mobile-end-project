@@ -12,6 +12,7 @@ CREATE TABLE xz_login(
 INSERT INTO xz_login VALUES(null,'tom',md5('123'));
 INSERT INTO xz_login VALUES(null,'jerry',md5('123'));
 
+
 ###功能商品添加  16 ~ 23
 #功能三:向商品表中添加一列 img_url
 USE xz;

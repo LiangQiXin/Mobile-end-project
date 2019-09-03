@@ -16,6 +16,7 @@ var pool = mysql.createPool({
    database:"xz"
 })
 
+
 //4:创建web服务器监听 8080 端口
 var server = express();
 server.listen(8080);
