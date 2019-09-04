@@ -10,6 +10,7 @@
 		<mt-button size="large"  @click="login">登录</mt-button>
 	</div>
 </template>
+
 <script>
 export default {
 	data(){
