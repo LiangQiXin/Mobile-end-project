@@ -9,7 +9,7 @@
 		<!--登录按钮 绑定事件-->
 		<mt-button size="large"  @click="login">登录</mt-button>
 	</div>
-</template>>
+</template>
 <script>
 export default {
 	data(){
