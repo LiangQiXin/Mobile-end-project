@@ -2,6 +2,9 @@
 <template>
 	<div>
 		<h3>xz_login.vue</h3>
+		<div>
+			<img class="mytupian" src="../../../assets/login1.png" alt="">
+		</div>
 		<!--用户名输入框-->
 		<mt-field label="用户名" placeholder="请输入用户名" :attr="{maxlenght:10}" v-model="uname"></mt-field>
 		<!-- 用户密码输入框 -->
@@ -65,5 +68,8 @@ export default {
 	/* background:linear-gradient(top,#27b1f6 0%,#0aa1ed 100%); */
 background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(39, 177, 246)), to(rgb(10, 161, 237)));
 }
-    
+   .mytupian{
+		 width:375px;
+		 height:150px;
+	 } 
 </style>>
