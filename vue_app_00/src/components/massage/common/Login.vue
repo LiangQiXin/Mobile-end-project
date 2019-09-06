@@ -11,6 +11,7 @@
 		<mt-field label="密码" placeholder="请输入密码" type="password" v-model="upwd"></mt-field>
 		<!--登录按钮 绑定事件-->
 		<mt-button size="large"  @click="login">登录</mt-button>
+		<mt-button size="large" @click="shouye">返回首页</mt-button>
 	</div>
 </template>
 
@@ -23,6 +24,9 @@ export default {
 		}
 	},
 	methods:{
+		shouye(){
+			this.$router.push("/ZFB");
+		},
 		login(){
 			//console.log(1);
 			//创建正则表达式3~12位置操作
@@ -67,9 +71,12 @@ export default {
 .mint-button--default {
 	/* background:linear-gradient(top,#27b1f6 0%,#0aa1ed 100%); */
 background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(39, 177, 246)), to(rgb(10, 161, 237)));
+margin-top:20px;
+margin-bottom:20px;
 }
    .mytupian{
 		 width:375px;
 		 height:150px;
+		margin-bottom:50px;
 	 } 
-</style>>
+</style>

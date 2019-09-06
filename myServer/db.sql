@@ -23,6 +23,19 @@ WHERE lid = 1;
 UPDATE xz_laptop SET img_url='02.jpg'
 WHERE lid > 1;
 
+USE xz;
+CREATE TABLE prodcut( 
+  lid  INT PRIMARY KEY AUTO_INCREMENT,
+  price  DECIMAL(10,2),
+  lname  VARCHAR(255),
+  img_url  VARCHAR(255)
+);
+INSERT INTO prodcut VALUES(NULL,5999,'AppMacBook Air',"01.jpg"); 
+INSERT INTO prodcut VALUES(NULL,6999,'AppleMacBook Air',"02.jpg");
+INSERT INTO prodcut VALUES(NULL,7999,'小米Air',"03.jpg");
+INSERT INTO prodcut VALUES(NULL,8999,'华为p30',"04.jpg");
+INSERT INTO prodcut VALUES(NULL,8999,'华为p40',"05.jpg");
+INSERT INTO prodcut VALUES(NULL,6999,'无人机p50',"06.png");
 
 #创建表 购物车
 #DECIMAL 高精度浮点数 2.00-1.99=0.01
