@@ -79,5 +79,25 @@ WHERE id = 3;
 UPDATE xz_data SET img_url='5000.jpg'
 WHERE id = 4;
 
-
-
+#商品表prodcuts_item
+USE xz;
+CREATE TABLE prodcuts_item( 
+  lid  INT PRIMARY KEY AUTO_INCREMENT,
+  price  DECIMAL(10,2),
+  lname  VARCHAR(255),
+  title   VARCHAR(255),
+  subtitle   VARCHAR(255),
+  promise    VARCHAR(255),
+  spec        VARCHAR(128),
+  shelf_time   INT,
+  sold_count   INT,
+  img_url  VARCHAR(255)
+);
+INSERT INTO prodcuts_item VALUES(NULL,5999,'AppMacBook Air',"AppMacBook Air13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","01.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,6999,'AppleMacBook Air',"AppMacBook Air13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","02.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,7999,'小米Air',"小米Air 13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","03.jpg");
+INSERT INTO prodcuts_item VALUES(NULL,6999,'华为p30',"华为p30 6英寸手机 银色(Core 8核/8GB内存/2...","10月焕新季，领券买新机！神券满5000减500！","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：8核/8G内存/128G闪存","1567927684148","100","04.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,7999,'华为p40',"华为p40 6英寸手机 银色(Core 8核/8GB内存/2...","10月焕新季，领券买新机！神券满5000减500！","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：8核/8G内存/128G闪存","1567927684148","120","05.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,6999,'无人机p50',"AppMacBook Air13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","06.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,5999,'MackBook50',"MackBook 13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","02.jpg"); 
+INSERT INTO prodcuts_item VALUES(NULL,7999,'小米p50','小米p50 6英寸手机 银色(Core 8核 /8GB内存/2...','10月焕新季，领券买新机！神券满8000减800！','*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货','定制款：双核i7/8G内存/128G闪存','1567927684148','120','03.jpg'); 

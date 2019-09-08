@@ -75,14 +75,111 @@ server.get("/login",(req,res)=>{
    }
   });
 })
-
+//首页动态生成的那几条数据
 server.get("/data",(req,res)=>{
   var sql="SELECT id,title1,title2,tiem1,time2,img_url";
   sql+=" FROM xz_data";
   pool.query(sql,[],(err,result)=>{
       if(err) throw err;
       res.send({code:1,msg:"查询成功",data:result});
-      console.log(result);
+     // console.log(result);
+  });
+});
+
+//首页每天必抢的六条数据
+server.get("/product",(req,res)=>{
+  //单纯获取数据直接查
+  var sql="SELECT lid,price,lname,img_url";
+  sql+=" FROM prodcut";
+  pool.query(sql,[],(err,result)=>{
+  //获取返回结果
+  if(err) throw err;
+  res.send({code:1,msg:"查询成功",data:result});
+  //console.log(result);
+  });
+});
+
+//功能二:商品分页显示
+// http://127.0.0.1:8080/product
+// http://127.0.0.1:8080/product?pno=2
+// http://127.0.0.1:8080/product?pno=3&pageSize=5
+ //1:接收客户请求 /products get
+server.get("/products",(req,res)=>{
+  //2:接收客户请求数据
+  // pno 页码  pageSize 页大小
+  var pno=req.query.pno;
+  var ps=req.query.pageSize;
+  //3:如果客户没有请示数据设置数据
+  //pno=1     pageSize=4
+  if(!pno){
+    pno=1;
+  }  
+  if(!ps){
+    ps=4;
+  }
+  //4:创建sql 语句
+  var sql="SELECT lid,lname,price,img_url";
+  sql+=" FROM prodcuts_item";
+  sql+=" LIMIT ?,?";
+  var offset=(pno-1)*ps; //其实记录数  ?
+       ps=parseInt(ps);   //行数       ?
+   //5:发送sql语句
+   pool.query(sql,[offset,ps],(err,result)=>{
+     if(err) throw err;
+     res.send({code:1,msg:"查询成功",data:result});
+   });    
+});
+
+//功能三:将指定商品添加至购物车
+
+//#此功能先行条件登录
+//#创建购物车数据表 xz_cart
+//在mysql执行
+
+//1:接收客户端请求 /addcart GET
+//http://127.0.0.1:8080/login?uname=tom&upwd=123
+//http://127.0.0.1:8080/addcart?lid=1&lname=kk&price=9
+
+server.get("/addcart",(req,res)=>{
+  //2:判断是否登录
+  //uid
+  //如果uid为undefined 没登录
+  var uid=req.session.uid;
+  if(!uid){
+    res.send({code:-1,msg:"请先登录"});
+    return;
+  }
+  //3:获取客户点击添加按钮传来的数据(客户端)->(服务器)->(数据库)加到数据库(操作数据)
+  var lid=req.query.lid;
+  var lname=req.query.lname;  //字符串特殊加'';
+  var price=req.query.price;
+//console.log(lid+":"+price+":"+lname)
+  //4:创建查询sql:当前用户是否购买此商品
+  var sql="SELECT id FROM xz_cart";
+  sql+=" WHERE uid=? AND lid=?";
+  pool.query(sql,[uid,lid],(err,result)=>{
+    if(err) throw err;
+    //6:在回调函数中判断一下操作
+    // 没购买过此商品   添加
+    //已购买过此商品    更新
+    if(result.length==0){
+      var sql=`INSERT INTO xz_cart VALUES(null,${lid},${price},1,'${lname}',${uid})`;
+    }else{
+      var sql=`UPDATE xz_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
+    }
+    //(嵌套一条sql语句)
+    //7:执行sql获得返回结果
+    //没参数(以上是客户端传进来的)
+    pool.query(sql,(err,result)=>{
+      if(err) throw err;
+      //8:如果sql UPDATE INSERT DELELE 都是依据影响行数
+      //判断执行成功   result.affectedRows  影响行数
+      if(result.affectedRows>0){
+        res.send({code:1,msg:"商品添加成功"});
+      }else{
+        res.send({code:-2,msg:"添加失败"});
+      }
+    });
   });
 });
 

@@ -17,13 +17,15 @@ import Pengyou from "./components/massage/common/Pengyou.vue"
 import Me from "./components/massage/common/Me.vue"
 //登录组件
 import Login from "./components/massage/common/Login.vue"
-
+//商品列表
+import Products from "./components/massage/common/Products-item.vue"
 
 Vue.use(Router)
 export default new Router({
   routes: [
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
+    {path:'/Products',component:Products},
     {path:'/Me',component:Me},
     {path:'/Pengyou',component:Pengyou},
     {path:'/KouBei',component:KouBei},
