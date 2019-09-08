@@ -10,11 +10,33 @@
 		<mt-tab-container-item id="shouye">
 			<!--(3)调用子组件 面板-->
 			<itemlist></itemlist>
+			
 		</mt-tab-container-item>
+    
+		 <mt-tab-container-item id="caifu"> 
+     <!-- (4)调用子组件 面板-->
+		 <caifu></caifu>
+	 </mt-tab-container-item> 
+    
+		 <mt-tab-container-item id="koubei"> 
+     <!-- (5)调用子组件 面板-->
+		 <koubei></koubei>
+	 </mt-tab-container-item> 
+    
+		 <mt-tab-container-item id="pengyou"> 
+     <!-- (6)调用子组件 面板-->
+		 <pengyou></pengyou>
+	 </mt-tab-container-item> 
+
+    <mt-tab-container-item id="me"> 
+     <!-- (7)调用子组件 面板-->
+		 <me></me>
+	 </mt-tab-container-item> 
+
 
 		</mt-tab-container>   
   <!-- 底部导航条 -->
-	<mt-tabbar v-model="active">
+	<mt-tabbar v-model="active" fixed>
 		<mt-tab-item id="shouye" @click.native="changeState(0)">
 			<tabbaricon :selectedImage="require('../../assets/1_select.png')" :normalImage="require('../../assets/1_normal.png')" :focused="currentIndex[0].isSelect"></tabbaricon>
 			  首页
@@ -31,6 +53,7 @@
 			<tabbaricon :selectedImage="require('../../assets/4_select.png')" :normalImage="require('../../assets/4_normal.png')" :focused="currentIndex[3].isSelect"></tabbaricon>
 			朋友
 		</mt-tab-item>
+
 		<mt-tab-item id="me" @click.native="changeState(4)">
 			<tabbaricon :selectedImage="require('../../assets/5_select.png')" :normalImage="require('../../assets/5_normal.png')" :focused="currentIndex[4].isSelect"></tabbaricon>
 			我的
@@ -45,7 +68,11 @@
 import TilteBar from "./common/TitleBar.vue"
 //2.引入内容子组件
 import ItemList from "./common/ItemList"
-//3.引入底部导航条图片组件
+import Caifu from "./common/Caifu"
+import KouBei from "./common/KouBei"
+import Pengyou from "./common/Pengyou"
+import Me from "./common/Me"
+//.引入底部导航条图片组件
 import TabBarIcon from "./common/TabBarIcon.vue"
 
 
@@ -54,6 +81,10 @@ export default {
 	components:{
 		"titlebar":TilteBar,  //顶部导航栏
 		"itemlist":ItemList,
+		"caifu": Caifu,
+		"koubei":KouBei,
+		"pengyou":Pengyou,
+		"me":Me,
 		"tabbaricon":TabBarIcon,  //底部导航条
 	},
 	methods:{

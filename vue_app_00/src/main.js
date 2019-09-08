@@ -23,6 +23,11 @@ axios.defaults.baseURL="http://127.0.0.1:8080/"
 //1.8注册(把axios放到Vue原型对象当中去)
 Vue.prototype.axios=axios;
 
+//单引轮播图
+//import { Swipe, SwipeItem } from 'mint-ui';
+
+//Vue.component(Swipe.name, Swipe);
+//Vue.component(SwipeItem.name, SwipeItem);
 
 
 new Vue({

@@ -52,6 +52,32 @@ CREATE TABLE xz_cart(
   uid    INT
 );
 
+USE xz;
+CEATE TABLE xz_data(
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title1 VARCHAR(32),
+  title2 VARCHAR(32),
+  tiem1   VARCHAR(25),
+  time2   VARCHAR(25)
+);
+INSERT INTO xz_data VALUES(NULL,"你有一张券到期1","余额宝收益到账啦1","一个小时前","三个小时"); 
+INSERT INTO xz_data VALUES(NULL,"你有一张券到期2","余额宝收益到账啦2","二个小时前","八个小时"); 
+INSERT INTO xz_data VALUES(NULL,"你有一张券到期3","余额宝收益到账啦3","三个小时前","五个小时"); 
+INSERT INTO xz_data VALUES(NULL,"你有一张券到期4","余额宝收益到账啦4","四个小时前","三个小时"); 
+
+###功能商品添加  16 ~ 23
+#功能三:向商品表中添加一列 img_url
+USE xz;
+ALTER TABLE xz_data ADD img_url VARCHAR(255);
+#更新商品表图片 01.jpg 02.jpg
+UPDATE xz_data SET img_url='login1.png'
+WHERE id = 1;
+UPDATE xz_data SET img_url='200.jpg'
+WHERE id = 2;
+UPDATE xz_data SET img_url='4000.jpg'
+WHERE id = 3;
+UPDATE xz_data SET img_url='5000.jpg'
+WHERE id = 4;
 
 
 

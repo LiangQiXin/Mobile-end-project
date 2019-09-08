@@ -82,7 +82,7 @@ export default {
  	background-color:#0082DF;
  z-index: 100px;
  width:100%;
-
+ 
 }
 .page2-footer img{
 	width:38px;

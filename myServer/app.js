@@ -76,7 +76,15 @@ server.get("/login",(req,res)=>{
   });
 })
 
-
+server.get("/data",(req,res)=>{
+  var sql="SELECT id,title1,title2,tiem1,time2,img_url";
+  sql+=" FROM xz_data";
+  pool.query(sql,[],(err,result)=>{
+      if(err) throw err;
+      res.send({code:1,msg:"查询成功",data:result});
+      console.log(result);
+  });
+});
 
 
 

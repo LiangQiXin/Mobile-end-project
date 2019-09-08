@@ -1,4 +1,5 @@
 <template>
+<div>
 <div class="container">
 	<div class="main">
     <!-- 一个程序 -->
@@ -91,19 +92,42 @@
 		</div>
 
 	</div>
-	<div class="middle">
-    <h6></h6>
-	</div>
+</div> 
+<div style="60px;"></div>
+
+	<router-link :to="'/'" class="middle">
+    <div class="leftimgtext">
+     <!-- 左侧图片 -->
+		 <img src="../../../assets/MaYi.png" alt="" class="imgstyle">
+
+		 <ul class="title">
+         <li class="titleable">{{titleable}}</li>
+				 <li class="subtitle">{{subtitle}}</li>
+		 </ul>
+		</div>
+	  <!-- (2)右侧时间 -->
+		<div class="timetext">
+		<span class="sendtime">{{sendtime}}</span>
+		<span class="sendtime2">{{sendtime2}}</span>
+		</div>
+	</router-link>	
+
 </div>
 </template>
 <script>
 export default {
-
+ props:{
+	 titleable:{default:""},
+	 subtitle:{default:""},
+	 sendtime:{default:""},
+	 sendtime2:{default:""}
+ }
 }
 </script>
 <style scoped>
 .container{
-		border-bottom:1px solid #d9d9d9;
+	  
+		border-bottom:3px solid #d9d9d9;
 }
 /* 一个小程序 */
 .main{
@@ -131,4 +155,47 @@ export default {
 	.mainImg{
 		text-decoration: none;
 	}
+	/* 下面消息 */
+	.middle{
+		display: flex;
+    justify-content:space-between;
+		align-items:center;
+		border-bottom:3px solid #d9d9d9;
+		text-decoration: none;
+	}
+	/* 左侧图片与文字区域 */
+	.leftimgtext{
+		display:flex;
+		align-items:center;
+		padding-left:5px;
+	  
+	}
+	/* 图片 */
+	.imgstyle{
+		width:50px;
+		height:50px;
+		
+	 border-radius: 50%;
+	border:1px solid  #d9d9d9;	
+	}
+	.title{
+		font-weight:lighter;
+		color:gray;
+	}
+	.subtitle{
+		margin-top:3px;
+	}
+	.sendtime2{
+		margin-top:3px;
+	}
+	/* 时间文字 */
+	.timetext{
+		display: flex;
+    flex-direction: column;
+		margin-right:50px;
+		font-weight:lighter;
+		color:gray;
+		font-size:0.9rem;
+	}
+
 </style>
