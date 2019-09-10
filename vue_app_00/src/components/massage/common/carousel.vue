@@ -8,6 +8,7 @@
 				<li class="shangtitle">{{list.title1}}</li>
 				<li class="xiatitle">{{list.title2}}</li>
 			</ul>
+			
 		<div class="box">
 				<img :src="'http://127.0.0.1:8080/'+list.img_url" alt="">
 		</div>

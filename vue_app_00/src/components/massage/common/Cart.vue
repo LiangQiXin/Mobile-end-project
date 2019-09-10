@@ -13,11 +13,12 @@
 				 <div class="price">¥8888</div>
 			 </div>
 			 <button>-</button>
-			 <input type="text">
+			 <input type="text" value="0" style="width:25px;text-align:center">
 			 <button>+</button>
 			 <mt-button>删除</mt-button>
 		</div>
 		<!-- 3:购物车中商品数量:删除选中商品,清空购物车 -->
+		   
 	</div>
 </template>
 <script>
