@@ -120,3 +120,12 @@ export default {
 	}
 }
 </script>
+<style scoped>
+
+.mint-tabbar > .mint-tab-item{
+	color:gray;
+}
+.mint-tabbar > .mint-tab-item.is-selected{
+	color:#26a2ff;
+}
+</style>

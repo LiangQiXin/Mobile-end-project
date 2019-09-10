@@ -1,3 +1,11 @@
+ALQX:
+#创建数据库
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS ?;
+CREATE DATABASE ? CHARSET=UTF8;
+USE ?;
+....... 
+
 #db.sql 创建表添加数据
 #学子商城 mintui版本
 

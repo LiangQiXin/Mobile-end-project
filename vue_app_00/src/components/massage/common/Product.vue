@@ -3,7 +3,8 @@
 		<h3>每天必抢<span>淘宝提供服务</span><span class="textright"><img src="../../../assets/xiaochacha.png" alt="" style="width:15px;"></span></h3>
 
     <div class="product">
-       <router-link :to="'/'" class="goods-item" v-for="(list,i) of lists" :key="i">
+		    	
+       <router-link :to="'/Products'" class="goods-item" v-for="(list,i) of lists" :key="i">
          <img :src="'http://127.0.0.1:8080/'+list.img_url" alt="">
 				 <!-- 商品名称 -->
 				 <h5>{{list.lname}}</h5>
