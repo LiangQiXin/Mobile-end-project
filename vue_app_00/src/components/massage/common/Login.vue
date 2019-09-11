@@ -57,7 +57,7 @@ export default {
 							 this.$messagebox("消息","用户名或密码有误");
 						 }else{
 							 	//成功 调转
-							 this.$router.push("/product")
+							 this.$router.push("/Products")
 						 } 
 			})
 		}

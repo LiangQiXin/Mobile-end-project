@@ -3,20 +3,23 @@
 	<!-- <h1>商品列表</h1> -->
 	<!-- <h5>每天必抢</h5> -->
   <!-- 此div表示一个商品 循环 -->
-
-		<router-link :to="'/'" class="goods-item" v-for="(list,i) of lists" :key="i">
+    
+		<div  class="goods-item" v-for="(list,i) of lists" :key="i">
+		<router-link :to="'/'"  class="text-a">
 		<!-- 1:商品图片 -->
 		<img :src="'http://127.0.0.1:8080/'+list.img_url" alt="">
 		<!-- 2:商品名称 -->
 		<h3>{{list.lname}}</h3>
 		<!-- 3:商品价格 -->
 		<div class="info">¥{{list.price}}</div>
+		</router-link>	
 		<!-- 4:加入购物车 -->
 		<mt-button @click="addcart" :data-lid="list.lid" :data-price="list.price" :data-lname="list.lname">加入购物车</mt-button>
-		</router-link><!-- 商品结束 -->
+		</div><!-- 商品结束 -->
+	
 
 		<mt-button size="large" @click="loadMore">加载更多</mt-button>
-		<mt-button>查看购物车</mt-button>
+		<mt-button @click="jumpCart">查看购物车</mt-button>
 	</div>
 </template>
 <script>
@@ -32,6 +35,10 @@ export default {
 		this.loadMore();
 	},
 	methods: {
+		jumpCart(){
+			//功能:跳转购物组件
+			this.$router.push("/Cart");
+		},
     addcart(e){  //点击的是当前按钮(获取当前值)
       //功能:将商品添加至购物车
 			//###1:获取添加购物车按钮的数据
@@ -100,8 +107,12 @@ export default {
 	 flex-direction:column;    /*商品内容按列排放*/
 	 min-height:249px;  /*最小高度为249px*/ 
 	 text-align: center;
-	 text-decoration:none;
  }
+.text-a{
+	text-decoration:none;
+ 
+}
+
  /*3:修饰当前商品中图片 10:18*/
   .goods-item img{
 width: 100%; 
