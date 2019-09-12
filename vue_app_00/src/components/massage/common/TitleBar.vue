@@ -2,15 +2,16 @@
 
   <div>
 			<div class="page-head">
-					<div class="page-middle">
-						<span>
-							<img :src="leftImg" alt="" slot="icon" style="width:25px;">
-							</span>
-						<input placeholder="动态搜索" type="text">
-						<span>
-							<img :src="leftImg2" alt="" slot="icon" style="width:25px;">
-							</span>
+					  <div class="page-middle ">
+            <router-link :to="'/'" class="my_a">
+						<img src="../../../assets/search.png" alt="" style="width:25px;" class="shangImg">
+						<input placeholder="动态搜索" type="text" class="titleLeftImg titleRightImg">
+						</router-link>
+            <router-link :to="'/Cart'">
+						<img src="../../../assets/yuyin.png" alt="" style="width:25px;" class="xiaImg">
+             </router-link>
 						</div>
+
 					  <div class="page1-footer">	
 				     
 						<img :src="rightImg" alt="" slot="icon" style="width:25px;" @click="add">
@@ -88,4 +89,39 @@ export default {
 	width:38px;
 
 } 
-</style>>
+/* <span>
+							<img :src="leftImg" alt="" slot="icon" style="width:25px;">
+							</span> */
+		/* <span>
+							<img :src="leftImg2" alt="" slot="icon" style="width:25px;">
+							</span>	
+												 */
+ .titleLeftImg{
+	/* background: #fff url("../../../assets/search.png")no-repeat 1%  center; */
+	background-size:25px 25px;
+	box-sizing: border-box;
+	padding-left:28px;
+	width:220px;
+	height:28px;
+	border-radius: 5px;
+	margin-left:10px;
+	border:1px solid #fff;
+}		 
+/* .titleRightImg{
+	background:#fff url("../../../assets/yuyin.png") no-repeat 97% center;
+	background-size:25px 25px;
+}										  */
+.shangImg{
+	position: absolute;
+	top:13px;
+	left:25px;
+}
+.xiaImg{
+	position: absolute;
+	top:13px;
+	left:210px;	
+}
+.my_a{
+	text-decoration: none;
+}
+</style>
