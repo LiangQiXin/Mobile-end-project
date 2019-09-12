@@ -14,7 +14,7 @@
 		<div class="info">¥{{list.price}}</div>
 		</router-link>	
 		<!-- 4:加入购物车 -->
-		<mt-button @click="addcart" :data-lid="list.lid" :data-price="list.price" :data-lname="list.lname">加入购物车</mt-button>
+		<mt-button @click="addcart" :data-lid="list.lid" :data-price="list.price" :data-lname="list.lname" :data-img_url="'http://127.0.0.1:8080/'+list.img_url">加入购物车</mt-button>
 		</div><!-- 商品结束 -->
 	
 
@@ -45,6 +45,7 @@ export default {
 			var lid=e.target.dataset.lid;
 			var lname=e.target.dataset.lname;
 		 var price=e.target.dataset.price;
+		 var img_url=e.target.dataset.img_url;
 		 console.log(lid+"|"+lname+"|"+price);
 		 //2:创建url将数据发送给服务器
       var url="addcart";
@@ -77,7 +78,7 @@ export default {
 			this.pno++;
 			//2:发送ajax请求获取第一页数据
 			this.axios.get(url,{params:{pno:this.pno}}).then(res=>{
-				//console.log(res.data.data);
+				console.log(res.data.data);
 				//数组拼接操作
 				var rows=this.lists.concat(res.data.data);
 				//赋值

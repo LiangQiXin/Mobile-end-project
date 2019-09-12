@@ -153,6 +153,7 @@ server.get("/addcart",(req,res)=>{
   var lid=req.query.lid;
   var lname=req.query.lname;  //字符串特殊加'';
   var price=req.query.price;
+  var img_url=req.query.img_url;
 //console.log(lid+":"+price+":"+lname)
   //4:创建查询sql:当前用户是否购买此商品
   var sql="SELECT id FROM xz_cart";
@@ -163,7 +164,7 @@ server.get("/addcart",(req,res)=>{
     // 没购买过此商品   添加
     //已购买过此商品    更新
     if(result.length==0){
-      var sql=`INSERT INTO xz_cart VALUES(null,${lid},${price},1,'${lname}',${uid})`;
+      var sql=`INSERT INTO xz_cart VALUES(null,${lid},${price},1,'${lname}',${uid},'${img_url}')`;
     }else{
       var sql=`UPDATE xz_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
     }
@@ -183,7 +184,22 @@ server.get("/addcart",(req,res)=>{
   });
 });
 
-
+//功能四:查询指定用户购物车信息
+server.get("/carts",(req,res)=>{
+  //(1)参数uid
+  var uid=req.session.uid;
+  if(!uid){
+    res.send({code:-1,msg:"请登录"});
+    return;
+  }
+  //(2)创建sql语句
+  var sql="SELECT id,lname,price,img_url FROM";
+  sql+=" xz_cart WHERE uid=?";   //uid意思是查看谁的购物车
+  pool.query(sql,[uid],(err,result)=>{
+    if(err) throw err;
+    res.send({code:1,msg:"查询成功",data:result});
+  });
+});
 
 
 

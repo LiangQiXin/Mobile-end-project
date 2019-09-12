@@ -6,8 +6,8 @@
 			全选 <input type="checkbox">
 		</div>
 		<!-- 2:商品信息 -->
-		<div class="cart-item">
-       <div class="leftText">
+		<div class="cart-item" v-for="(item,i) of lists" :key="i">
+       <div class="leftText"  >
 				 <div>
 				 <input type="checkbox" style="width:30px;">
 				 </div>
@@ -15,8 +15,8 @@
 				 <img src="@/assets/5000.png" alt=""  class="my-style">
 				 </div>
 				 <ul class="list-style">
-				 <li class="lname">Hollow</li>
-				 <li class="price">¥8888</li>
+				 <li class="lname" v-text="item.lname"></li>
+				 <li class="price">¥{{item.price}}</li>
 				 </ul>
 			 </div>
 			 <div class="bottom">
@@ -38,7 +38,24 @@
 </template>
 <script>
 export default {
-	
+	data(){
+		return{
+			lists:[{id:"",lname:"",price:""}],
+		}
+	},
+	created(){
+		this.loadMore();
+	},
+	methods:{
+     loadMore(){
+			 var url="carts";
+			 this.axios.get(url).then(res=>{
+				 console.log(res.data.data);
+				  var rows=res.data.data;
+					this.lists=rows;
+			 });
+		 }
+	},
 }
 </script>
 <style scoped>
@@ -47,6 +64,7 @@ export default {
     display: flex;  /*弹性布局*/
 		justify-content: space-between;
 		align-items: center;
+	
 	}
 	/*左边的内容*/
 	.leftText{
@@ -59,7 +77,8 @@ export default {
 		list-style:none;padding:15px;
 	}
 .lname{
-		font-size:1.1rem; 
+		font-size:1.1rem;
+		font-weight:lighter; 
 	}
 .price{
 	margin-top:10px;

@@ -115,3 +115,8 @@ INSERT INTO prodcuts_item VALUES(NULL,6999,'无人机p50',"AppMacBook Air13.3英
 INSERT INTO prodcuts_item VALUES(NULL,5999,'MackBook50',"MackBook 13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","02.jpg"); 
 INSERT INTO prodcuts_item VALUES(NULL,7999,'小米p50','小米p50 6英寸手机 银色(Core 8核 /8GB内存/2...','10月焕新季，领券买新机！神券满5000减500！','*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货','定制款：八核UPU/128G内存','1567927684148','120','03.jpg'); 
 
+
+###购物车中图片添加  16 ~ 23
+#功能三:向商品表中添加一列 img_url
+USE xz;
+ALTER TABLE xz_cart ADD img_url VARCHAR(255);
