@@ -146,7 +146,7 @@ export default {
 				this.axios.get(url,{
 					params:obj
 				}).then(res=>{
-					console.log(res.data);
+				//	console.log(res.data);
 					if(res.data.code==1){
 						this.$toast("删除成功");
 						this.loadMore();//刷新

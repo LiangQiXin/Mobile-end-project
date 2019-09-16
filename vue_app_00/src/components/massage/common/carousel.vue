@@ -23,7 +23,7 @@ export default {
  props:["item"],
 	 
  created() {
-	 console.log(this.imgurl)
+	// console.log(this.imgurl)
  }
 }
 </script>

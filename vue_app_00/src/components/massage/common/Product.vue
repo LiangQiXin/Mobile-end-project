@@ -25,14 +25,14 @@ export default {
 	//加载组件时调用加载数据
 	created() {
 		this.loadMore();
-		console.log(this.img_url);
+	//	console.log(this.img_url);
 	},
 	//封装ajax
 	methods: {
 		loadMore(){
 			var url="product";
 			this.axios.get(url).then(res=>{
-				console.log(res.data.data);
+				//console.log(res.data.data);
        this.lists=res.data.data;
 			})
 		}

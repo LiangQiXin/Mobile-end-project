@@ -49,7 +49,7 @@ export default {
 		 var price=e.target.dataset.price;
 		 var img_url=e.target.dataset.img_url;
 		 var is_checked=e.target.dataset.is_checked;
-		 console.log(lid+"|"+lname+"|"+price+"|"+img_url+"|"+is_checked);
+		// console.log(lid+"|"+lname+"|"+price+"|"+img_url+"|"+is_checked);
 		 //2:创建url将数据发送给服务器
       var url="addcart";
 			var obj={lid,lname,price,img_url,is_checked};
