@@ -1,36 +1,60 @@
 <template>
  <div> 
-	<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
-	:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
-	<!--空div 48px-->
-	 <div style="margin-top:20px"></div>
+	
   <!-- (2)面板 父面板 子面板 -->
 	<mt-tab-container v-model="active">
 		
 		<mt-tab-container-item id="shouye">
-			<!--(3)调用子组件 面板-->
+			<!--(1)调用子组件 面板-->
+			 <!-- 顶部导航titlebar -->
+			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
+			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
+			<!--空div 48px-->
+			<div style="margin-top:20px"></div>
 			<itemlist></itemlist>
 			
 		</mt-tab-container-item>
     
 		 <mt-tab-container-item id="caifu"> 
-     <!-- (4)调用子组件 面板-->
+     <!-- (2)调用子组件 面板-->
+		 <!-- 顶部导航titlebar -->
+			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
+			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
+			<!--空div 48px-->
+			<div style="margin-top:20px"></div>
 		 <caifu></caifu>
 	 </mt-tab-container-item> 
     
 		 <mt-tab-container-item id="koubei"> 
-     <!-- (5)调用子组件 面板-->
+     <!-- (3)调用子组件 面板-->
+		 <!-- 顶部导航titlebar -->
+			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
+			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
+			<!--空div 48px-->
+			<div style="margin-top:20px"></div>
 		 <koubei></koubei>
 	 </mt-tab-container-item> 
     
 		 <mt-tab-container-item id="pengyou"> 
-     <!-- (6)调用子组件 面板-->
+     <!-- (4)调用子组件 面板-->
+		 <!-- 顶部导航titlebar -->
+			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
+			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
+			<!--空div 48px-->
+			<div style="margin-top:20px"></div>
 		 <pengyou></pengyou>
 	 </mt-tab-container-item> 
 
     <mt-tab-container-item id="me"> 
-     <!-- (7)调用子组件 面板-->
-		 <me></me>
+     <!-- (5)调用子组件 面板-->
+		 <metitle :fristImg="require('@/assets/me_title1.png')" :middleImg="require('@/assets/me_title2.png')" 	:endImg="require('@/assets/me_title3.png')"
+		 :hongDian="require('@/assets/Me_tishi.png')"></metitle>
+		 <!--空div 48px-->
+			<div style="margin-top:0px;height:0px;"></div>
+			<meitem></meitem>
+      <metext></metext>
+		 <!-- <me></me> -->
+		
 	 </mt-tab-container-item> 
 
 
@@ -66,12 +90,16 @@
 <script>
 //1.引入子组件
 import TilteBar from "./common/TitleBar.vue"
-//2.引入内容子组件
+//2.引入内容子组件(面板子组件)
 import ItemList from "./common/ItemList"
 import Caifu from "./common/Caifu"
 import KouBei from "./common/KouBei"
 import Pengyou from "./common/Pengyou"
+//5人团队项目
 import Me from "./common/Me"
+import MeTitle from "./common/MeTitle"
+import Me_item from "./common/Me_item"
+import Me_text from './common/Me_text'
 //.引入底部导航条图片组件
 import TabBarIcon from "./common/TabBarIcon.vue"
 
@@ -84,7 +112,11 @@ export default {
 		"caifu": Caifu,
 		"koubei":KouBei,
 		"pengyou":Pengyou,
+		//5人团队项目me部分
 		"me":Me,
+		"metitle": MeTitle,
+		"meitem":Me_item,
+    "metext":Me_text,
 		"tabbaricon":TabBarIcon,  //底部导航条
 	},
 	methods:{
@@ -121,7 +153,7 @@ export default {
 }
 </script>
 <style scoped>
-
+/*底部导航栏样式切换*/
 .mint-tabbar > .mint-tab-item{
 	color:gray;
 }

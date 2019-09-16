@@ -3,17 +3,18 @@
   <div>
 			<div class="page-head">
 					  <div class="page-middle ">
+							<!-- 搜索框 -->
             <router-link :to="'/'" class="my_a">
-						<img src="../../../assets/search.png" alt="" style="width:25px;" class="shangImg">
+						<img :src="leftImg" alt="" style="width:25px;" class="shangImg">
 						<input placeholder="动态搜索" type="text" class="titleLeftImg titleRightImg">
 						</router-link>
             <router-link :to="'/Cart'">
-						<img src="../../../assets/yuyin.png" alt="" style="width:25px;" class="xiaImg">
+						<img :src="leftImg2" alt="" style="width:25px;" class="xiaImg">
              </router-link>
 						</div>
 
 					  <div class="page1-footer">	
-				     
+				     <!-- 导航栏右边的功能 -->
 						<img :src="rightImg" alt="" slot="icon" style="width:25px;" @click="add">
 					
 						<img :src="rightImg2" alt="" slot="icon" style="width:25px;margin-left:15px;" @click="tasks">
@@ -22,6 +23,7 @@
 			 </div>
 			<div>
 		</div>
+		<!-- 下面的导航栏 -->
 		<div class="page2-footer">
        <div>
 				 <img src="../../../assets/saoMa.png" alt="">
@@ -110,7 +112,9 @@ export default {
 /* .titleRightImg{
 	background:#fff url("../../../assets/yuyin.png") no-repeat 97% center;
 	background-size:25px 25px;
-}										  */
+}	
+									  */
+	/*搜索框中的图片*/
 .shangImg{
 	position: absolute;
 	top:13px;
@@ -121,6 +125,7 @@ export default {
 	top:13px;
 	left:210px;	
 }
+/*router-link*/
 .my_a{
 	text-decoration: none;
 }

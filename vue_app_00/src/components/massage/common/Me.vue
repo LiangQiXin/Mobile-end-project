@@ -1,7 +1,7 @@
 <template>
-  <div>
-	  <h5>我就是我</h5>	
-	</div>	
+	<div>
+		  <h1>我是me</h1>
+	</div>
 </template>
 <script>
 export default {

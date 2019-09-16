@@ -14,7 +14,9 @@
 		<div class="info">¥{{list.price}}</div>
 		</router-link>	
 		<!-- 4:加入购物车 -->
-		<mt-button @click="addcart" :data-lid="list.lid" :data-price="list.price" :data-lname="list.lname" :data-img_url="'http://127.0.0.1:8080/'+list.img_url">加入购物车</mt-button>
+		<mt-button @click="addcart" :data-lid="list.lid" :data-price="list.price" :data-lname="list.lname" :data-img_url="list.img_url"
+		:data-is_checked="list.is_checked"
+		>加入购物车</mt-button>
 		</div><!-- 商品结束 -->
 	
 
@@ -46,10 +48,11 @@ export default {
 			var lname=e.target.dataset.lname;
 		 var price=e.target.dataset.price;
 		 var img_url=e.target.dataset.img_url;
-		 console.log(lid+"|"+lname+"|"+price);
+		 var is_checked=e.target.dataset.is_checked;
+		 console.log(lid+"|"+lname+"|"+price+"|"+img_url+"|"+is_checked);
 		 //2:创建url将数据发送给服务器
       var url="addcart";
-			var obj={lid,lname,price};
+			var obj={lid,lname,price,img_url,is_checked};
 			//#3:发送ajax请求获取
 			this.axios.get(url,{params:obj}).then(res=>{
 				//服务器端res.send 回-1作为判断是否登录

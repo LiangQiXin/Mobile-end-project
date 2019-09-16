@@ -13,7 +13,6 @@
        </router-link><!--商品结束-->
 			 
 		</div>
-	   
 	</div>
 </template>
 <script>
