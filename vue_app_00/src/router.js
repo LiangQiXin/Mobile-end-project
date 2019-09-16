@@ -22,11 +22,15 @@ import Products from "./components/massage/common/Products-item.vue"
 //购物车组件
 import Cart from "./components/massage/common/Cart.vue"
 
+//GDW提供服务器
+import GDW from "./components/massage/GDW.vue"
+
 Vue.use(Router)
 export default new Router({
   routes: [
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
+    {path:'/GDW',component:GDW},
     {path:'/Cart',component:Cart},
     {path:'/Products',component:Products},
     {path:'/Me',component:Me},

@@ -5,19 +5,19 @@
 					  <div class="page-middle ">
 							<!-- 搜索框 -->
             <router-link :to="'/'" class="my_a">
-						<img :src="leftImg" alt="" style="width:25px;" class="shangImg">
+						<img :src="leftImg" alt="" class="shangImg">
 						<input placeholder="动态搜索" type="text" class="titleLeftImg titleRightImg">
 						</router-link>
             <router-link :to="'/Cart'">
-						<img :src="leftImg2" alt="" style="width:25px;" class="xiaImg">
+						<img :src="leftImg2" alt=""  class="xiaImg">
              </router-link>
 						</div>
 
 					  <div class="page1-footer">	
 				     <!-- 导航栏右边的功能 -->
-						<img :src="rightImg" alt="" slot="icon" style="width:25px;" @click="add">
+						<img :src="rightImg" alt="" slot="icon" @click="add">
 					
-						<img :src="rightImg2" alt="" slot="icon" style="width:25px;margin-left:15px;" @click="tasks">
+						<img :src="rightImg2" alt="" slot="icon" style="margin-left:15px;" @click="tasks">
 						
 						</div>	
 			 </div>
@@ -55,6 +55,10 @@ export default {
 }
 </script>
 <style scoped>
+/*顶部icon的尺寸*/
+.page-head img{
+    width: 25px;
+}
 /*导航栏样式*/
 .page-head{
 	display: flex;
