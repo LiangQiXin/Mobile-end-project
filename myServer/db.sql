@@ -125,6 +125,7 @@ INSERT INTO prodcuts_item VALUES(NULL,7999,'小米p50','小米p50 6英寸手机 
 #功能三:向商品表中添加一列 img_url
 USE xz;
 ALTER TABLE xz_cart ADD img_url VARCHAR(255);
+ALTER TABLE xz_cart ADD is_checked VARCHAR(5);
 
 USE xz;
 ALTER TABLE prodcuts_item ADD is_checked VARCHAR(5); 
