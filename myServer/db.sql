@@ -1,10 +1,10 @@
 
 #创建数据库
-SET NAMES UTF8;
-DROP DATABASE IF EXISTS ?;
-CREATE DATABASE ? CHARSET=UTF8;
-USE ?;
-....... 
+#SET NAMES UTF8;
+#DROP DATABASE IF EXISTS ?;
+#CREATE DATABASE ? CHARSET=UTF8;
+#USE ?;
+#....... 
 
 #?是你要建立数据库名称
 
@@ -33,6 +33,8 @@ WHERE lid = 1;
 UPDATE xz_laptop SET img_url='02.jpg'
 WHERE lid > 1;
 
+
+
 USE xz;
 CREATE TABLE prodcut( 
   lid  INT PRIMARY KEY AUTO_INCREMENT,
@@ -59,11 +61,12 @@ CREATE TABLE xz_cart(
   price  DECIMAL(10,2),
   count  INT,
   lname  VARCHAR(255),
-  uid    INT
+  uid    INT,
+ 
 );
 
 USE xz;
-CEATE TABLE xz_data(
+CREATE TABLE xz_data(
   id INT PRIMARY KEY AUTO_INCREMENT,
   title1 VARCHAR(32),
   title2 VARCHAR(32),
@@ -90,6 +93,7 @@ WHERE id = 3;
 UPDATE xz_data SET img_url='5000.jpg'
 WHERE id = 4;
 
+
 #商品表prodcuts_item
 USE xz;
 CREATE TABLE prodcuts_item( 
@@ -103,6 +107,7 @@ CREATE TABLE prodcuts_item(
   shelf_time   INT,
   sold_count   INT,
   img_url  VARCHAR(255)
+
 );
 INSERT INTO prodcuts_item VALUES(NULL,5999,'AppMacBook Air',"AppMacBook Air13.3英寸笔记本 银色(Core i7 处理器/8GB内存/2...","10月焕新季，领券买新机！神券满8000减800！一体成型金属机身，纤薄轻巧，长达12小时续航","*退货补运费 *30天无忧退货 *48小时快速退款 *72小时发货","定制款：双核i7/8G内存/128G闪存","1567927684148","120","01.jpg");
 
@@ -120,3 +125,7 @@ INSERT INTO prodcuts_item VALUES(NULL,7999,'小米p50','小米p50 6英寸手机 
 #功能三:向商品表中添加一列 img_url
 USE xz;
 ALTER TABLE xz_cart ADD img_url VARCHAR(255);
+
+USE xz;
+ALTER TABLE prodcuts_item ADD is_checked VARCHAR(5); 
+UPDATE prodcuts_item SET is_checked='false' WHERE lid >= 1;

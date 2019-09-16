@@ -118,7 +118,7 @@ server.get("/products",(req,res)=>{
     ps=4;
   }
   //4:创建sql 语句
-  var sql="SELECT lid,lname,price,img_url";
+  var sql="SELECT lid,lname,price,img_url,sold_count,is_checked";
   sql+=" FROM prodcuts_item";
   sql+=" LIMIT ?,?";
   var offset=(pno-1)*ps; //其实记录数  ?
@@ -154,6 +154,7 @@ server.get("/addcart",(req,res)=>{
   var lname=req.query.lname;  //字符串特殊加'';
   var price=req.query.price;
   var img_url=req.query.img_url;
+  var is_checked=req.query.is_checked;
 //console.log(lid+":"+price+":"+lname)
   //4:创建查询sql:当前用户是否购买此商品
   var sql="SELECT id FROM xz_cart";
@@ -164,7 +165,7 @@ server.get("/addcart",(req,res)=>{
     // 没购买过此商品   添加
     //已购买过此商品    更新
     if(result.length==0){
-      var sql=`INSERT INTO xz_cart VALUES(null,${lid},${price},1,'${lname}',${uid},'${img_url}')`;
+      var sql=`INSERT INTO xz_cart VALUES(null,${lid},${price},1,'${lname}',${uid},'${img_url}','${is_checked}')`;
     }else{
       var sql=`UPDATE xz_cart SET count=count+1 WHERE uid=${uid} AND lid=${lid}`;
     }
@@ -193,7 +194,7 @@ server.get("/carts",(req,res)=>{
     return;
   }
   //(2)创建sql语句
-  var sql="SELECT id,lname,price,img_url FROM";
+  var sql="SELECT id,lname,price,img_url,count,is_checked FROM";
   sql+=" xz_cart WHERE uid=?";   //uid意思是查看谁的购物车
   pool.query(sql,[uid],(err,result)=>{
     if(err) throw err;
@@ -201,6 +202,55 @@ server.get("/carts",(req,res)=>{
   });
 });
 
+//http://127.0.0.1:8080/delItem?id=1
+//http://127.0.0.1:8080/login?uname=tom&upwd=123
+//http://127.0.0.1:8080/delItem?id=1
+//功能五:删除购物车表中指定数据
+server.get("/delItem",(req,res)=>{
+  //0:判断是否登录
+  var uid=req.session.uid;
+  if(!uid){
+    res.send({code:-2,msg:"请登录"});
+    return;
+  }
+  //1:获取客户端发送数据id
+  var id=req.query.id;
+  //2:创建sql语句
+  //194:逻辑错误lid改id
+  var sql="DELETE FROM xz_cart WHERE id=?";
+  //3:执行sql语句
+  pool.query(sql,[id],(err,result)=>{
+    if(err) throw err;
+    //4:获取服务器获取结果判断删除是否成功
+    if(result.affectedRows>0){
+      res.send({code:1,msg:"删除成功"});
+    }else{
+      res.send({code:-1,msg:"删除失败"});
+    }
+  });
+});
 
-
+//http://127.0.0.1:8080/delItems?id=4,3
+//http://127.0.0.1:8080/login?uname=tom&upwd=123
+//http://127.0.0.1:8080/delItems?id=4,3
+//功能六:删除购物车中多个商品
+server.get("/delItems",(req,res)=>{
+ //0:判断用户是否登录
+ //1:获取参数 id=1,2,3
+ var id = req.query.id;
+ //2:创建 sql语句
+ var sql=`DELETE FROM xz_cart`;
+ sql+=` WHERE id IN (${id})`; 
+ //3:执行sql语句
+ pool.query(sql,(err,result)=>{
+   if(err)throw err;
+   if(result.affectedRows>0){
+     res.send({code:1,msg:"删除成功"})
+   }else{
+     res.send({code:-1,msg:"删除失败"})
+   }
+ })
+ //4:获取服务器返回结果
+ //5:将结果返回客户端
+})
 
