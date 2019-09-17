@@ -46,7 +46,7 @@
 	 </mt-tab-container-item> 
 
     <mt-tab-container-item id="me"> 
-     <!-- (5)调用子组件 面板-->
+     <!-- (5)调用子组件 面板 5人组项目(ME)-->
 		 <metitle :fristImg="require('@/assets/me_title1.png')" :middleImg="require('@/assets/me_title2.png')" 	:endImg="require('@/assets/me_title3.png')"
 		 :hongDian="require('@/assets/Me_tishi.png')"></metitle>
 		 <!--空div 48px-->
@@ -62,11 +62,15 @@
   <!-- 底部导航条 -->
 	<mt-tabbar v-model="active" fixed>
 		<mt-tab-item id="shouye" @click.native="changeState(0)">
-			<tabbaricon :selectedImage="require('../../assets/1_select.png')" :normalImage="require('../../assets/1_normal.png')" :focused="currentIndex[0].isSelect"></tabbaricon>
+
+			<tabbaricon :selectedImage="require('../../assets/1_select.png')" :normalImage="require('../../assets/1_normal.png')" :focused="currentIndex[0].isSelect">
+			</tabbaricon>
 			  首页
 		</mt-tab-item>
+
 		<mt-tab-item id="caifu" @click.native="changeState(1)">
-			<tabbaricon :selectedImage="require('../../assets/2_select.png')" :normalImage="require('../../assets/2_normal.png')" :focused="currentIndex[1].isSelect"></tabbaricon>
+			<tabbaricon :selectedImage="require('../../assets/2_select.png')" :normalImage="require('../../assets/2_normal.png')" :focused="currentIndex[1].isSelect">
+			</tabbaricon>
 			财富
 		</mt-tab-item>
 		<mt-tab-item id="koubei" @click.native="changeState(2)">
@@ -129,7 +133,7 @@ export default {
 		changeState(idx){
 		//	console.log(123);
 		for(var i=0;i<this.currentIndex.length;i++){
-			if(i==idx){
+			if(i==idx){   //focused的判断
 				this.currentIndex[i].isSelect=true;
 			}else{
 				this.currentIndex[i].isSelect=false;
@@ -141,6 +145,7 @@ export default {
 		return {
 			active:"shouye",
 			//创建数组保存所有(底部导航条)图片状态
+			//current 当前的意思
 			currentIndex:[
 				 {isSelect:true},
 				 {isSelect:false},

@@ -2,29 +2,42 @@
   <div>
 		<div class="page-head">
 			 <!-- 左边文字 -->
-         <div class="Title_text">每天必抢</div>
+         <router-link :to="'/'" class="Title_text">每天必抢</router-link>
 				<!-- 搜索框 --> 
-				 <div class="middle">
-					 <img class="my_position" src="@/assets/search.png" alt="" >
+				 <router-link :to="'/'" class="middle">
+					 <img class="my_position" :src="milldleImg" alt="" >
 					 <input class="input_Sy" type="text" placeholder="搜索商品">
-				 </div>
+				 </router-link>
 				<!-- 左边的功能 --> 
 				 <div class="right_img">
-            <img src="@/assets/TaoBao01.png" alt="">
-						<img src="@/assets/TaoBao02.png" alt="">
+            <img class="border_left" :src="rightImg1" alt="" @click="tasks">
+
+						<img :src="rightImg2" alt="" @click="guanBi">
 				 </div>
 		</div>
  </div>	
 </template>
 <script>
 export default {
-	
+	props:{
+		//父组件GDW传值
+		milldleImg:{default:""},  
+		rightImg1:{default:""},
+    rightImg2:{default:""},
+		tasks:{type:Function},
+		guanBi:{type:Function}
+	}
 }
 </script>
 <style scoped>
+/*去除下划线a*/
+.Title_text,.middle{
+	text-decoration: none;
+}
 /*顶部icon的尺寸*/
 .page-head img{
 	width: 25px;
+	height: 25px;
 }
 /*顶部的布局样式*/
 .page-head{
@@ -49,6 +62,7 @@ export default {
 	top:12px;
 	left:100px;
 }
+/*搜索框样式*/
 .input_Sy{
 	padding-left:28px;
 	width: 165px;
@@ -57,11 +71,19 @@ export default {
 	outline-style: none;
 	border:1px solid #fff;
 }
+/* 搜索框中右边的功能 */
 .right_img{
-	width:58px;
+	width:62px;
 	height: 30px;
-	background-color:gray;
-	opacity: 0.9;
+	background:rgba(0,0,0,0.3);
 	border-radius: 8px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+/*中间的一条线*/
+.border_left{
+	border-right:1px solid gray;
 }
 </style>
