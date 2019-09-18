@@ -7,7 +7,7 @@
 				全选 <input type="checkbox" @change="selectAll" style="marign:6px;">
 			</div>
 			<div class="left_h5">
-		<h5>合计:¥ <span style="font-size:19px;color:red">{{total.toFixed(2)}}</span></h5>
+		合计:¥ <input class="my_money" type="text" :value="total.toFixed(2)">
 		  </div>
 			 
 		</div>
@@ -74,7 +74,9 @@ export default {
 			if(e.target.nodeName=="BUTTON"){
 				var i=e.target.dataset.i;
 				//再从自定义扩展属性n中获得增量(-1获得+1)
-				this.lists[i].count+=parseInt(e.target.dataset.n);
+				
+		this.lists[i].count+=parseInt(e.target.dataset.n);
+				
 				if(this.lists[i].count<=0){
 					this.lists[i].count=0;
 					this.delItem(e);
@@ -160,11 +162,32 @@ export default {
 			})
 		},
      loadMore(){
+			 //功能:获取当前用户购物车列表
+      //1:创建url请求服务器地址
 			 var url="carts";
+			  //2:发送ajax 请求(让服务器程序完成功能)
 			 this.axios.get(url).then(res=>{
-				 console.log(res.data.data);
+				 //console.log(res.data);
+				 //console.log(res.data.data);
+       if(res.data.code==-1){
+				 //4:如果服务器返回-1 请登录
+				 this.$messagebox("消息","请登录").then(res=>{
+					 //回调函数(用户点击确认按钮后调用函数)
+					 this.$router.push("/Login");
+				 })
+			 }else{
+				 //3:获取服务器返回数据
+				 //this.list=res.data.data;
+				 //添加一个新功能:为数据添加属性cb
+				 //3.1:创建循环遍历res.data.data中数据(顺序)
 				  var rows=res.data.data;
+					for(var item of rows) {
+						//3.2:为其添加属性cb值false(顺序)
+						item.cb = false;
+					}
+					//3.3:将新数组赋值list (顺序)
 					this.lists=rows;
+         }
 			 });
 		 }
 	},
@@ -187,8 +210,9 @@ export default {
 	/*商品标题文字*/
 .list-style{
 		list-style:none;
-		margin:0 0 0 6px; 
+		margin:0 0 0 2px; 
 		padding: 0px;
+		width:100px;
 	}
 .lname{
 		font-size:1rem;
@@ -196,8 +220,10 @@ export default {
 		padding: 0px; 
 	}
 .price{
-	margin-top:10px;
+	margin-top:10px 0 0 0;
 	color: red;
+	width: 10px;
+	
 }
 /*加减button*/
 .bottom{
@@ -227,6 +253,14 @@ export default {
   padding-left:7px; 
 }
 .left_h5{
-	margin-right:150px; 
+	margin-right:80px; 
+}
+.my_money{
+	width: 80px;
+	text-align: center;
+	font-size:19px;
+	color:red;
+	border-radius: 3px;
+	border:1px solid #fff;
 }
 </style>
