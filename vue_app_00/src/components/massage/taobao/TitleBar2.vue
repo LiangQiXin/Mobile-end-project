@@ -52,22 +52,22 @@ export default {
 }
 /*文字  每天.....*/
 .Title_text{
-	font-size: 18px;
+	font-size: 1.3rem;
 	font-weight: lighter;
 	color:#fff;
 }
 /*搜索框的小图片*/
 .my_position{
 	position: absolute;
-	top:12px;
-	left:100px;
+	top:0.9rem;
+	left:6.8rem;
 }
 /*搜索框样式*/
 .input_Sy{
 	padding-left:28px;
 	width: 165px;
 	height: 25px; 
-	border-radius: 10px;
+	border-radius: 0.7rem;
 	outline-style: none;
 	border:1px solid #fff;
 }
@@ -76,7 +76,7 @@ export default {
 	width:62px;
 	height: 30px;
 	background:rgba(0,0,0,0.3);
-	border-radius: 8px;
+	border-radius: 0.5rem;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;

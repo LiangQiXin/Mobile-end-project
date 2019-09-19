@@ -92,7 +92,7 @@ export default {
    width:330px;
    height: 60px;
    margin:10px auto;
-   background: lightskyblue;
+   background: #019ead;
    display: flex;
    
  }
@@ -109,7 +109,7 @@ export default {
   margin-top:-8px;
 }
 .xTitle{
-  font-size:13px;
+  font-size:10px;
   font-weight: lighter;
   margin-top:6px;
   color: #fff; 
