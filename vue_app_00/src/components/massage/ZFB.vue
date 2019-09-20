@@ -46,14 +46,16 @@
 	 </mt-tab-container-item> 
 
     <mt-tab-container-item id="me"> 
-     <!-- (5)调用子组件 面板 5人组项目(ME)-->
+     
+		  
+				<!-- (5)调用子组件 面板 5人组项目(ME)-->
 		 <metitle :fristImg="require('@/assets/me_title1.png')" :middleImg="require('@/assets/me_title2.png')" 	:endImg="require('@/assets/me_title3.png')"
 		 :hongDian="require('@/assets/Me_tishi.png')"></metitle>
 		 <!--空div 48px-->
 			<div style="margin-top:0px;height:0px;"></div>
 			<meitem></meitem>
-      <metext></metext>
-		 <!-- <me></me> -->
+       <metext></metext> 
+			<!-- <me></me> -->
 		
 	 </mt-tab-container-item> 
 
