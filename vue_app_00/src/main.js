@@ -11,6 +11,12 @@ Vue.use(MintUI)
 //1.4引入字体图标
 import "./font/iconfont.css"
 
+import Vant from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(Vant);
+
+
 //1.5引入axios 配置axios
 import axios from 'axios'
 //1.6配置请求时保存session信息

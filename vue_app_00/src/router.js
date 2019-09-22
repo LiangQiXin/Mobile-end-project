@@ -21,7 +21,8 @@ import Login from "./components/massage/common/Login.vue"
 import Products from "./components/massage/common/Products-item.vue"
 //购物车组件
 import Cart from "./components/massage/common/Cart.vue"
-
+//商品详情页
+import PlistItems from "./components/massage/taobao/PlistItems"
 //GDW提供服务器
 import GDW from "./components/massage/GDW.vue"
 
@@ -30,6 +31,8 @@ export default new Router({
   routes: [
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
+     //淘宝首页
+     {path:'/PLIS',component:PlistItems},
     {path:'/GDW',component:GDW},
     {path:'/Cart',component:Cart},
     {path:'/Products',component:Products},
@@ -37,8 +40,10 @@ export default new Router({
     {path:'/Pengyou',component:Pengyou},
     {path:'/KouBei',component:KouBei},
     {path:'/Caifu',component:Caifu},
+    //zfb首页的内容
     {path:'/ItemList',component:ItemList},
     {path:'/Login',component:Login},
+    //zfb首页
     {path:'/ZFB',component:ZFB},
     {path:'/Home',component:Home},
     {path:'/',component:HelloContainer},

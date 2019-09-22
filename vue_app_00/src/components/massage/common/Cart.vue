@@ -1,46 +1,63 @@
 <template>
-	<div class="cart" @click="handler">
-		<h3>购物车</h3>
-		<div class="myPosition">
-			<!-- 1:顶部复选框: 全选 -->
-			<div class="selectall" >
-				全选 <input type="checkbox" @change="selectAll" style="marign:6px;">
+  <div>
+   <!-- 购物车nav -->
+		<div class="TaoBao">
+				<div class="TBnav">
+					<img @click="change" src="../../../assets/GuWuChe.png" alt="">
+					<div><h3>购物车</h3></div>
+				</div>
+        <div class="right_img">
+					 <img class="border_left" src="@/assets/TaoBao01.png" alt="">
+
+					 <img src="@/assets/TaoBao02.png" alt="" @click="guanBi">
+				</div>
+		</div>
+		<div style="height:55px;"></div>
+      <!-- 购无车正文 -->
+			<div class="cart" @click="handler">
+				
+				<div class="myPosition">
+					<!-- 1:顶部复选框: 全选 -->
+					<div class="selectall" >
+						全选 <input type="checkbox" @change="selectAll" style="marign:6px;">
+					</div>
+					<div class="left_h5">
+				合计:¥ <input class="my_money" type="text" :value="total.toFixed(2)">
+					</div>
+					
+				</div>
+				
+				<!-- 2:商品信息 -->
+				<div class="cart-item" v-for="(item,i) of lists" :key="i">
+					<div class="leftText" >
+						<div>
+						<input type="checkbox" style="width:30px;" v-model="item.cb">
+						</div>
+						<div>
+						<img :src="'http://127.0.0.1:8080/'+item.img_url" alt=""  class="my-style">
+						</div>
+						<ul class="list-style">
+								<li class="lname" v-text="item.lname"></li>
+								<li class="price">¥{{item.price}}</li>
+						</ul>
+					</div>
+					<div class="bottom">
+					<button :data-i="i" :data-n="-1" :data-id="item.id">-</button>
+					<input type="text" :value="item.count" class="myinput" >
+					<button :data-i="i" :data-n="+1">+</button>
+				
+					<mt-button @click="delItem" :data-id="item.id">删除</mt-button>
+					</div>
+				</div>
+				<!-- 3:购物车中商品数量:删除选中商品,清空购物车 -->
+				<div>
+					购物车中商品数量
+					<span style="color:red">0</span>
+					<mt-button @click="delItems">删除选中商品</mt-button>
+					<mt-button>清空购物车</mt-button>
+				</div> 
+				<div style="height:60px;"></div> 
 			</div>
-			<div class="left_h5">
-		合计:¥ <input class="my_money" type="text" :value="total.toFixed(2)">
-		  </div>
-			 
-		</div>
-   	
-		<!-- 2:商品信息 -->
-		<div class="cart-item" v-for="(item,i) of lists" :key="i">
-       <div class="leftText" >
-				 <div>
-				 <input type="checkbox" style="width:30px;" v-model="item.cb">
-				 </div>
-				 <div>
-				 <img :src="'http://127.0.0.1:8080/'+item.img_url" alt=""  class="my-style">
-				 </div>
-				 <ul class="list-style">
-						<li class="lname" v-text="item.lname"></li>
-						<li class="price">¥{{item.price}}</li>
-				 </ul>
-			 </div>
-			 <div class="bottom">
-			 <button :data-i="i" :data-n="-1" :data-id="item.id">-</button>
-			 <input type="text" :value="item.count" class="myinput" >
-			 <button :data-i="i" :data-n="+1">+</button>
-     
-			 <mt-button @click="delItem" :data-id="item.id">删除</mt-button>
-       </div>
-		</div>
-		<!-- 3:购物车中商品数量:删除选中商品,清空购物车 -->
-		 <div>
-      购物车中商品数量
-			<span style="color:red">0</span>
-			<mt-button @click="delItems">删除选中商品</mt-button>
-			<mt-button>清空购物车</mt-button>
-		</div>  
 	</div>
 </template>
 <script>
@@ -67,6 +84,12 @@ export default {
 		}
 	},
 	methods:{
+		guanBi() {
+			this.$router.push('/ZFB');
+		},
+		change() {
+			this.loadMore();
+		},
 		handler(e){
 			//否则,如果点的不是+号,则执行数量+ -操作
 				//因为提前在每个按钮上缓存了序号i和增量n(-1或+1)
@@ -262,5 +285,46 @@ export default {
 	color:red;
 	border-radius: 3px;
 	border:1px solid #fff;
+}
+/*Nav导航购物车*/
+.TaoBao{
+	display: flex;
+	justify-content: space-between;
+  align-items:center;
+	padding:0 1.5rem; 
+	background-color: #fd6d04;
+	width: 100%;
+	height: 48px;
+	border-radius: 3px;
+	position: fixed;
+	z-index: 999;
+}
+
+.TaoBao>div>img{
+	width: 25px;
+}
+/*二次弹性为图片与购物车*/
+.TaoBao>.TBnav{
+   display: flex;
+	 align-items: center;
+	 justify-content: space-between;
+	 width:100px;
+}
+.TaoBao>.TBnav>div>h3{
+	color:white;
+}
+/*nav的导航右边的功能*/
+.right_img{
+	width:62px;
+	height: 30px;
+	background:rgba(0,0,0,0.3);
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-right: 3rem;
+}
+.border_left{
+  	border-right:1px solid #ffff;
 }
 </style>

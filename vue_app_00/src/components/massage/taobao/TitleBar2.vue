@@ -15,6 +15,7 @@
 						<img :src="rightImg2" alt="" @click="guanBi">
 				 </div>
 		</div>
+		<div style="height:48px;"></div>
  </div>	
 </template>
 <script>
@@ -49,6 +50,7 @@ export default {
 	background: #FF0000;
 	position: fixed;
 	z-index: 999;
+	border-radius:3px; 
 }
 /*文字  每天.....*/
 .Title_text{

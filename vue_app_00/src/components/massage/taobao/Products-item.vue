@@ -22,6 +22,7 @@
 
 		<mt-button size="large" @click="loadMore">加载更多</mt-button>
 		<mt-button @click="jumpCart">查看购物车</mt-button>
+		<div style="height:100px"></div>
 	</div>
 </template>
 <script>
