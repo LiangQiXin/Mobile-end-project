@@ -19,16 +19,18 @@
 			<!-- 1:最外层父元素 -->
 			<div class="container">
       <!-- 2:视屏区域 -->
-					<video class="videoW" src="../../../assets/x.mp4"  id="v3"  @mouseover="toggle" @mouseout="toggle">
+					<video class="videoW" controls src="../../../assets/x.mp4"  id="v3">
 					</video>
-				<!-- 3:广告区域 -->
-					<img src="../../../assets/Me_LuFei.png" alt="" id="ad">
 					<!-- 4:按钮区域 -->
-					<a href="javascript:;" id="ctrl" >
-						<img    src="../../../assets/play.png" alt="" v-show="show">
-					</a>
-					<div id="ctrl" style="width:360px;height:200px;position: absolute;top:40px;left:40px;" @mouseover="toggle" @mouseout="toggle"></div>
+					<!-- <a href="javascript:;" id="ctrl" >
+						<img  src="../../../assets/play.png" alt="">
+					</a>	 -->
 			</div>
+		</div>
+
+		<div>
+			<h3>¥88888-999999</h3>
+
 		</div>
  </div> 
 </template>
@@ -107,24 +109,6 @@ body{
 	width: 23rem;
 }
 #ctrl{
-  position: absolute;  /*子元素绝对定位*/
-  top:50%;
-	left:50%;
-	margin-top:-44px;
-	margin-left: -33px;
-	z-index: 99;
-  /*display: none;   c3的显示与隐藏  */
-}
- /* .container:hover>#ctrl{
-	display: block;
-}  */
-/*小路飞(广告)样式*/
-#ad{
-	position:absolute;
-	left: 50%;
-	top: 50%;
-	border-radius: 50%;
-	margin-left:-36px;
-	margin-top:-50px; 
+	margin-top: 0PX;
 }
 </style>

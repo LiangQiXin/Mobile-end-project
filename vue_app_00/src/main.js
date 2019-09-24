@@ -36,8 +36,31 @@ Vue.prototype.axios=axios;
 //Vue.component(SwipeItem.name, SwipeItem);
 
 
+//功能vuex保存共享数据
+//1.9:引入第三方模块
+import Vuex from "vuex"
+//1.10:注册示例(先注册再创建储存对象)
+Vue.use(Vuex)
+//1.11:创建储存对象
+var store=new Vuex.Store({
+  state:{  //集中管理数据方法
+
+  },
+  mutations:{  //集中修改数据函数属性
+
+  },
+  getters:{   //集中获取数据函数
+
+  },
+  actions:{  //集中保存异步修改数据函数
+
+  },
+});
+//1.12:将储存对象添加vue示例作为属性
+
+
 new Vue({
   router,
   render: h => h(App),
-  
+   store   //1.12:将储存对象添加vue示例作为属性
 }).$mount('#app')

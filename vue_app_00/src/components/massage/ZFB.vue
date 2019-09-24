@@ -2,7 +2,7 @@
  <div> 
 	
   <!-- (2)面板 父面板 子面板 -->
-	<mt-tab-container v-model="active">
+	<mt-tab-container v-model="active" swipeable>
 		 
 		<mt-tab-container-item id="shouye">
 			<!--(1)调用子组件 面板-->

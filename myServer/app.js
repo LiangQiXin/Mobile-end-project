@@ -3,6 +3,8 @@
 //express/express-session/cors/mysql
 //2:将第三方模块引入到当前程序中
 const express= require("express");
+//引入body-parser中间件
+const bodyParser=require('body-parser');
 const session = require("express-session");
 const cors = require("cors");
 const mysql = require("mysql");
@@ -41,6 +43,40 @@ server.use(session({
 //7:配置静态目录
 //http://127.0.0.1:8080/01.jpg
 server.use(express.static("public"));
+//使用body-parser中间件
+server.use( bodyParser.urlencoded({
+  extended:false
+}) );
+
+//功能0:注册
+server.post('/reg',(req,res)=>{
+   //1.1获取post请求的数据
+   var obj=req.body;
+   console.log(obj);
+   //1.2验证每一项是否为空
+   //obj={uname:"dingding",upwd:12345,email:"1369184393@qq.com"...}
+   //遍历对象,访问每个属性
+   var i=400;
+   for(var key in obj) {
+     i++;
+     //console.log(key,obj[key]);
+     //如果(属性值)为空,提示属性名必须
+     if(!obj[key]) {
+       res.send({code:i,msg:key+" required"});
+       return;
+     }
+   }
+   //1.3执行SQL语句
+   var sql="INSERT INTO zfb_reg SET ?";
+   pool.query(sql,[obj],(err,result)=>{
+     if(err) throw err;
+     //console.log(result);
+     //如果插入成功
+     if(result.affectedRows>0) {
+       res.send({code:200,msg:"reg succ"});
+     }
+   });
+});
 
 //功能一:完成用户登录
 //启动服务器app.js/启动数据库
