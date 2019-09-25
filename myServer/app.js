@@ -49,28 +49,18 @@ server.use( bodyParser.urlencoded({
 }) );
 
 //功能0:注册
-server.post('/reg',(req,res)=>{
+server.get('/reg',(req,res)=>{
    //1.1获取post请求的数据
-   var obj=req.body;
-   console.log(obj);
-   //1.2验证每一项是否为空
-   //obj={uname:"dingding",upwd:12345,email:"1369184393@qq.com"...}
-   //遍历对象,访问每个属性
-   var i=400;
-   for(var key in obj) {
-     i++;
-     //console.log(key,obj[key]);
-     //如果(属性值)为空,提示属性名必须
-     if(!obj[key]) {
-       res.send({code:i,msg:key+" required"});
-       return;
-     }
-   }
+   var uname=req.query.uname;
+   var upwd=req.query.upwd;
+   var email=req.query.email;
+   var phone=req.query.phone;
+ console.log(uname+":"+upwd+"+"+email+":"+phone);
    //1.3执行SQL语句
-   var sql="INSERT INTO zfb_reg SET ?";
-   pool.query(sql,[obj],(err,result)=>{
+   var sql=`INSERT INTO zfb_reg VALUES(null,'${uname}',md5('${upwd}'),'${email}','${phone}')`;
+   pool.query(sql,(err,result)=>{
      if(err) throw err;
-     //console.log(result);
+     console.log(result);
      //如果插入成功
      if(result.affectedRows>0) {
        res.send({code:200,msg:"reg succ"});

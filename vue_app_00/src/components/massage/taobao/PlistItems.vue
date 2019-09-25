@@ -30,7 +30,7 @@
 
 		<div>
 			<h3>¥88888-999999</h3>
-
+     
 		</div>
  </div> 
 </template>
@@ -61,7 +61,7 @@ body{
 /*商品详情nav*/
   .TaoBao{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-between; 
   align-items:center;
 	padding:0 1.5rem; 
 	background-color: #fd6d04;
