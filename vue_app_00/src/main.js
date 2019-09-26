@@ -10,11 +10,18 @@ import "mint-ui/lib/style.css"
 Vue.use(MintUI)
 //1.4引入字体图标
 import "./font/iconfont.css"
-
+//引入vant组件
 import Vant from 'vant';
 import 'vant/lib/index.css';
 
 Vue.use(Vant);
+
+//引入Swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+ //注册
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
 
 
 //1.5引入axios 配置axios
@@ -34,6 +41,10 @@ Vue.prototype.axios=axios;
 
 //Vue.component(Swipe.name, Swipe);
 //Vue.component(SwipeItem.name, SwipeItem);
+
+
+
+
 
 
 //功能vuex保存共享数据

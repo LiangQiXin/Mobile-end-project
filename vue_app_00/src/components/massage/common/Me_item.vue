@@ -106,7 +106,7 @@ export default {
   font-size: 16px;
   font-weight:lighter;
   color:#fff;
-  margin-top:-8px;
+  margin-top:0.5rem;
 }
 .xTitle{
   font-size:10px;
