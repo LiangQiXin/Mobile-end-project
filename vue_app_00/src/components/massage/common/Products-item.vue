@@ -21,7 +21,7 @@
 	
 
 		<mt-button size="large" @click="loadMore">加载更多</mt-button>
-		<mt-button @click="jumpCart">查看购物车</mt-button>
+		<!-- <mt-button @click="jumpCart">查看购物车</mt-button> -->
 	</div>
 </template>
 <script>
@@ -38,10 +38,10 @@ export default {
 		this.loadMore();
 	},
 	methods: {
-		jumpCart(){
-			//功能:跳转购物组件
-			this.$router.push("/Cart");
-		},
+		// jumpCart(){
+		// 	//功能:跳转购物组件
+		// 	this.$router.push("/Cart");
+		// },
     addcart(e){  //点击的是当前按钮(获取当前值)
       //功能:将商品添加至购物车
 			//###1:获取添加购物车按钮的数据

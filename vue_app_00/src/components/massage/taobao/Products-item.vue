@@ -5,7 +5,7 @@
   <!-- 此div表示一个商品 循环 -->
     
 		<div  class="goods-item" v-for="(list,i) of lists" :key="i">
-		<router-link :to="'/PLIS'"  class="text-a">
+		<router-link :to="'/PLIS/'+list.lid"  class="text-a">
 		<!-- 1:商品图片 -->
 		<img :src="'http://127.0.0.1:8080/'+list.img_url" alt="">
 		<!-- 2:商品名称 -->
@@ -28,6 +28,7 @@
 <script>
 
 export default {
+	
 	data(){
 		return{
 			lists:[],   //保存服务器返回商品列表
@@ -65,7 +66,7 @@ export default {
 						this.$router.push("/Login");
 					});
 				}else if(res.data.code==-2){
-					this.$$messagebox("消息","添加失败");
+					this.$messagebox("消息","添加失败");
 				}else{
 					this.$messagebox("消息","添加成功");
 				}

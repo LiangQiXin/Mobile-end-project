@@ -90,6 +90,7 @@ server.get("/login",(req,res)=>{
    if(result.length==0){
      res.send({code:-1,msg:"用户名或密码有误"})
    }else{
+    // console.log(result);
      //获取当前登录用户id
      //result=[{id:2}]
      var id = result[0].id;
@@ -280,3 +281,16 @@ server.get("/delItems",(req,res)=>{
  //5:将结果返回客户端
 })
 
+//http://127.0.0.1:8080/Product-data?lid=20
+//查询商品的详情信息
+server.get("/Product-data",(req,res)=>{
+   var lid=req.query.lid;
+  
+   console.log(lid);
+  var sql=`SELECT * FROM prodcuts_item WHERE lid=?`;
+  
+  pool.query(sql,[lid],(err,result)=>{
+     if(err) throw err;
+    res.send({code:200,msg:"查询成功",data:result});  
+  });
+})

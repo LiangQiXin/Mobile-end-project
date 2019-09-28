@@ -64,7 +64,7 @@
 export default {
 	data(){
 		return{
-			lists:[{id:"",lname:"",price:"",count:"",is_checked:"",img_url:""}],
+			lists:[{id:"",lname:"",price:"",count:null,is_checked:"",img_url:""}],
 
 		}
 	},

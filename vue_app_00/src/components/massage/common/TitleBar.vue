@@ -1,49 +1,77 @@
 <template>
 
   <div>
-			<div class="page-head">
-					  <div class="page-middle ">
+			<div class="page-head" ref="toTops0">
+
+				 <div class="page-middle ">
 							<!-- 搜索框 -->
             <router-link :to="'/'" class="my_a">
-						<img :src="leftImg" alt="" class="shangImg">
-						<input placeholder="动态搜索" type="text" class="titleLeftImg titleRightImg">
+							<img :src="leftImg" alt="" class="shangImg">
+							<input placeholder="动态搜索" type="text" class="titleLeftImg titleRightImg">
 						</router-link>
             <router-link :to="'/Cart'">
-						<img :src="leftImg2" alt=""  class="xiaImg">
-             </router-link>
-						</div>
+						 <img :src="leftImg2" alt=""  class="xiaImg">
+            </router-link>
+				</div>
 
-					  <div class="page1-footer">	
+				<div class="page-middle1">	
 				     <!-- 导航栏右边的功能 -->
 						<img :src="rightImg" alt="" slot="icon" @click="add">
 					
-						<img :src="rightImg2" alt="" slot="icon" style="margin-left:15px;" @click="tasks">
-						
-						</div>	
-			 </div>
-			<div>
+						<img :src="rightImg2" alt="" slot="icon" style="margin-left:15px;" @click="tasks">	
+				</div>
+
 		</div>
-		<!-- 下面的导航栏 -->
-		<div class="page2-footer">
-       <div>
-				 <img src="../../../assets/saoMa.png" alt="">
-			 </div>
-			 <div>
-				 <img src="../../../assets/pay.png" alt="">
-			 </div>
-			 <div>
-				 <img src="../../../assets/qian.png" alt="">
-			 </div>
-			 <div>
-				 <img src="../../../assets/kabao.png" alt="">
-			 </div>
-		</div>
-</div>
-		
-		
+		<!-- 隐藏的导航栏 -->
+     
+				<div class="page2-footer" ref="toTops1">
+					<div>
+						<img src="../../../assets/saoMa.png" alt="">
+					</div>
+					<div>
+						<img src="../../../assets/pay.png" alt="">
+					</div>
+					<div>
+						<img src="../../../assets/qian.png" alt="">
+					</div>
+					<div>
+						<img src="../../../assets/search.png" alt="">
+					</div>
+					<div>
+						<img src="../../../assets/jia.png" alt="" class="jiaImg" >
+					</div>
+				</div>
+
+		<div style="height:40px;"></div>
+</div>		
 </template>
 <script>
 export default {
+	data() {
+		return{
+      // scrollTop:0
+		}
+	},
+	methods: {
+		// 		 scroll() {
+		//     window.onscroll=()=>{
+		//       var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+		//       console.log(scrollTop);
+		// 		if(scrollTop>=100) {
+				// this.$refs.toTop0.style.display="none";
+				// this.$refs.toTop0.style.transition="all 0.5s linear";
+		// 		}else{
+          
+		// 		}   
+		//    }
+		//  }
+	},
+	created() {
+  //  this.scroll();
+	},
+	mounted() {
+		 
+	},
 	props:{  //声明父组件接收的数据
   leftImg:{default:""},
 	leftImg2:{default:""},
@@ -68,16 +96,19 @@ export default {
 	align-items: center;
 	justify-content:space-between;
 	background-color:#0082DF;
-	height:50px;
-	position: relative;
-}
+	height:60px;
+	/* position: relative; */
+     /* display: none;   */
+} 
 .page-middle{
 	display: flex;
+
+	z-index:999;
 	align-items:center;
 	margin-left:10px;
 }
 
-.page1-footer{
+.page-middle1{
 	margin-right: 30px;
 	
 }
@@ -87,9 +118,9 @@ export default {
 	align-items: center;
 	justify-content: space-around;
  	background-color:#0082DF;
- z-index: 100px;
- width:100%;
- 
+  z-index:px;
+  width:100%;
+  position: fixed;
 }
 .page2-footer img{
 	width:38px;
@@ -121,7 +152,7 @@ export default {
 	/*搜索框中的图片*/
 .shangImg{
 	position: absolute;
-	top:13px;
+	top:18px;
 	left:25px;
 }
 .xiaImg{
@@ -132,5 +163,23 @@ export default {
 /*router-link*/
 .my_a{
 	text-decoration: none;
+}
+.page2-footer{
+  display: flex;
+	align-items: center;
+	justify-content: space-around;
+ 	background-color:#0082DF;
+  width:100%;
+  height: 60px;
+	 /* display: none;  */
+}
+.page2-footer img{
+	width:30px;
+} 
+.page-footer1{
+	display: flex;
+}
+.page2-footer img.jiaImg{
+		width:50px;
 }
 </style>

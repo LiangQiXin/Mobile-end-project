@@ -53,8 +53,8 @@ export default {
 			upwd1:"",
 			phone:"",
 			email:"",
-			show1:false,
-			show2:true
+			show1:true,
+			show2:false
 		}
 	},
 	methods:{
@@ -97,6 +97,8 @@ export default {
 								this.upwd1="";
 								this.phone="";
 								this.email="";
+								this.show1=true;
+								this.show2=false;
 							})
 					}else{
 						this.$toast("注册失败");
@@ -145,7 +147,7 @@ export default {
 							 this.$messagebox("消息","用户名或密码有误");
 						 }else{
 							 	//成功 调转
-							 this.$router.push("/Products")
+							 this.$router.push("/GDW")
 						 } 
 			})
 		}

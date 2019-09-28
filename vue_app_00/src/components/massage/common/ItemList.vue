@@ -1,5 +1,19 @@
 <template>
 <div>
+	<div class="page2-footer">
+       <div>
+				 <img src="../../../assets/saoMa.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/pay.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/qian.png" alt="">
+			 </div>
+			 <div>
+				 <img src="../../../assets/kabao.png" alt="">
+			 </div>
+		</div>
 	 <!-- <h2>itemList为临时设置为全局组件</h2> -->
     <item :titleable="item[0].title1" :subtitle="item[0].title2" :sendtime="item[0].tiem1" :sendtime2="item[0].time2"></item>
    <!--四条数据-->
@@ -49,5 +63,16 @@ export default {
 }
 </script>
 <style scoped>
+ .page2-footer{
+  display: flex;
+	align-items: center;
+	justify-content: space-around;
+ 	background-color:#0082DF;
+  width:100%;
+  
+}
+.page2-footer img{
+	width:38px;
 
+} 
 </style>

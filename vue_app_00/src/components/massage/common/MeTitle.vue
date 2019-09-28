@@ -59,18 +59,20 @@ export default {
      scroll() {
     window.onscroll=()=>{
       var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
-      console.log(scrollTop);
+      //console.log(scrollTop);
       if(scrollTop>=100) {
      this.$refs.toTop.style.backgroundColor="rgba(94,174,221,1)";
     this.$refs.toTop2.style.display="none";
-    this.$refs.toTop.style.transition= "all 0.5s linear"; 
+    this.$refs.toTop.style.transition= "all 0.5s linear";
+      this.$refs.toTop2.style.transition= "all 0.5s linear";
+      
      }else{
-       this.$refs.toTop.style.backgroundColor="rgba(94,174,221,0.1)";
+        this.$refs.toTop.style.backgroundColor="rgba(94,174,221,0)";
       this.$refs.toTop2.style.display="";
-  }
-    }  
+            }
+       }  
      }
-   },
+  },
    props:["place"],
    created() {
      this.scroll();
@@ -95,7 +97,7 @@ export default {
 	align-items: center;
 	width:100%;
 	height:70px;
-  background-color:rgba(94,174,221,0.1);
+  /* background-color:rgba(94,174,221,0.1); */
   z-index: 999px;
 	position: fixed;
   border-radius: 3px;

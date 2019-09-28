@@ -32,7 +32,7 @@ export default new Router({
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
      //淘宝首页
-     {path:'/PLIS',component:PlistItems},
+     {path:'/PLIS/:lid',component:PlistItems,props:true},
     {path:'/GDW',component:GDW},
     {path:'/Cart',component:Cart},
     {path:'/Products',component:Products},
