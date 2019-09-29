@@ -279,7 +279,7 @@ export default {
 	margin-right:80px; 
 }
 .my_money{
-	width: 80px;
+	width: 100px;
 	text-align: center;
 	font-size:19px;
 	color:red;

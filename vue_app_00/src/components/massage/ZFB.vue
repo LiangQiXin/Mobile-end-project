@@ -17,21 +17,17 @@
     
 		 <mt-tab-container-item id="caifu"> 
      <!-- (2)调用子组件 面板-->
-		 <!-- 顶部导航titlebar -->
-			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
-			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
-			<!--空div 48px-->
-			<div style="margin-top:20px"></div>
-		 <caifu></caifu>
+		   <caifu></caifu>
 	 </mt-tab-container-item> 
     
 		 <mt-tab-container-item id="koubei"> 
      <!-- (3)调用子组件 面板-->
-		 <!-- 顶部导航titlebar -->
+		  <!-- 顶部导航titlebar -->
 			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
 			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
 			<!--空div 48px-->
 			<div style="margin-top:20px"></div>
+		
 		 <koubei></koubei>
 	 </mt-tab-container-item> 
     
@@ -142,6 +138,11 @@ export default {
 			}
 			}
 		}	
+	},
+	watch: {
+		active() {
+			this.$store.commit('changeActive',this.active)
+		}
 	},
 	data(){
 		return {

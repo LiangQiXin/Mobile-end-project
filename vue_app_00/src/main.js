@@ -55,10 +55,12 @@ Vue.use(Vuex)
 //1.11:创建储存对象
 var store=new Vuex.Store({
   state:{  //集中管理数据方法
-
+    active:"shouye",
   },
   mutations:{  //集中修改数据函数属性
-
+    changeActive(state,value) {
+       state.active=value
+    }
   },
   getters:{   //集中获取数据函数
 
