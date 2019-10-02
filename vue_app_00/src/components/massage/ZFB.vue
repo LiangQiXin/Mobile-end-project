@@ -23,10 +23,6 @@
 		 <mt-tab-container-item id="koubei"> 
      <!-- (3)调用子组件 面板-->
 		  <!-- 顶部导航titlebar -->
-			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
-			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
-			<!--空div 48px-->
-			<div style="margin-top:20px"></div>
 		
 		 <koubei></koubei>
 	 </mt-tab-container-item> 
@@ -73,7 +69,7 @@
 		</mt-tab-item>
 		<mt-tab-item id="koubei" @click.native="changeState(2)">
 			<tabbaricon :selectedImage="require('../../assets/3_select.png')" :normalImage="require('../../assets/3_normal.png')" :focused="currentIndex[2].isSelect"></tabbaricon>
-			口碑
+			花呗
 		</mt-tab-item>
 		<mt-tab-item id="pengyou" @click.native="changeState(3)">
 			<tabbaricon :selectedImage="require('../../assets/4_select.png')" :normalImage="require('../../assets/4_normal.png')" :focused="currentIndex[3].isSelect"></tabbaricon>

@@ -105,6 +105,7 @@
 			 <swiper :options="swiperOption" ref="mySwiper" @someSwiperEvent="callback">
     <!-- slides -->
     <swiper-slide>
+			<!-- 第一个滑动 -->
        <div class="swiper0-CaiFu">
 				 <div class="swiper0-CaiFu1">
          <div class="swiper0-CaiFu2">
@@ -116,13 +117,48 @@
 				  <img src="@/assets/Me_JT2.png" alt="">
 					</div>
 				</div>
-			<div>
+			<div class="neirong">
 			  <h3>大涨的科技股有泡沫吗?</h3>	
-			</div>	
-			 </div>
+			</div>
+      <div class="tanxing">
+				<img src="@/assets/4_normal.png" alt="">
+				<h5>88888人已参与</h5>
+			</div>
+			<div style="height:30px;"></div>
+			<div class="btn-style">
+				<button>有</button>
+				&nbsp;&nbsp;
+				<button>没有</button>
+			</div>
+	 </div>
 		</swiper-slide>
     <swiper-slide>
-gdgdfg
+	<!-- 第一个滑动 -->
+       <div class="swiper0-CaiFu">
+				 <div class="swiper0-CaiFu1">
+         <div class="swiper0-CaiFu2">
+					 <img src="@/assets/C_JH.png" alt="">
+					 <span>话题广场</span>
+					</div>
+
+					<div>
+				  <img src="@/assets/Me_JT2.png" alt="">
+					</div>
+				</div>
+			<div class="neirong">
+			  <h3>大涨的科技股有泡沫吗?</h3>	
+			</div>
+      <div class="tanxing">
+				<img src="@/assets/4_normal.png" alt="">
+				<h5>88888人已参与</h5>
+			</div>
+			<div style="height:30px;"></div>
+			<div class="btn-style">
+				<button>有</button>
+				&nbsp;&nbsp;
+				<button>没有</button>
+			</div>
+	 </div>
 		</swiper-slide>
     <swiper-slide>
 dgdg
@@ -141,9 +177,35 @@ fgdg
 		</swiper-slide>
     <!-- Optional controls -->
     <div class="swiper-pagination"  slot="pagination"></div>
-		 <div class="swiper-scrollbar"   slot="scrollbar"></div>
+		 <!-- <div class="swiper-scrollbar"   slot="scrollbar"></div> -->
   </swiper>
 		</div>
+		<!-- 稳健理财 -->
+		<div class="h3_h4-flex">
+			<h3>稳健理财</h3>
+		  <h4>更多</h4>
+		</div>
+		<div class="CaiFu-main-text1">	
+				<div class="CaiFu-main-text2">
+					<h5>取用灵活</h5>
+					<h3>3.71%</h3>
+					<p class="xiao">近一年收益</p>
+					<p>易方达余额佳</p>
+				</div>
+				<div class="CaiFu-main-text2">
+					<h5>取用灵活</h5>
+					<h3>3.71%</h3>
+					<p class="xiao">近一年收益</p>
+					<p>易方达余额佳</p>
+				</div>
+				<div class="CaiFu-main-text2">
+					<h5>取用灵活</h5>
+					<h3>3.71%</h3>
+					<p class="xiao">近一年收益</p>
+					<p>易方达余额佳</p>
+				</div>
+		</div>	
+		<div style="height:60px;"></div>
 	</div>
 </template>
 <script>
@@ -308,5 +370,52 @@ div.CaiFu_middle-tB>div>p{
 	display: flex;
 	align-items: center;
 	padding:0.5rem 0.5rem; 
+}
+.neirong>h3{
+	padding-left: 1rem;
+  margin:1rem 0;
+}
+.tanxing{
+	display: flex;
+	align-items: center;
+	padding-left:1rem;
+}
+.tanxing>h5{
+	margin:0.5rem 0.3rem;
+}
+.btn-style{
+	padding-left: 1rem;
+}
+.btn-style button{ 
+	width: 100px;
+	height: 30px;
+	background-color:#ea531e;
+  border:1px solid #ea531e;
+	color: #FFF;
+  border-radius: 3px;
+}
+.btn-style button:nth-child(2){
+	background-color:#0e8fe6;;
+  border:1px solid #0e8fe6;
+}
+.CaiFu-main-text1{
+	display: flex;
+}
+.h3_h4-flex{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1rem; 
+}
+.CaiFu-main-text2{
+	width: 35%;
+	border-left:1px solid #ddd;
+	text-align: center;
+}
+.CaiFu-main-text2>h3{
+	color:red;
+}
+.CaiFu-main-text2>p.xiao{
+	font-weight:lighter;
+	font-size: 0.5rem;
 }
 </style>
