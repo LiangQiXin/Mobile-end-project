@@ -21,7 +21,7 @@
 			 <h1>8,888.88</h1>
 			 <p>这个月买&nbsp;下个月还0费用</p>
 			 <div class="cha-box">
-			 <button>查看详情</button>
+			 <button @click="jump1">查看详情</button>
 			 </div>
 		</div>
 		<!-- 我的账单  我的额度 -->
@@ -134,6 +134,9 @@ export default {
 		this.loadMore1();
 	},
 	methods: {
+		jump1() {
+      this.$router.push('/HBX');
+		},
 		HuanYiH() {
 			this.loadMore1();
 		},
@@ -379,6 +382,8 @@ div.H-shangP:not(:first-child){
 	background: red;
 	border-radius: 0.3rem;
 	border:1px solid red;
+	color: #fff;
+	font-weight: lighter;
 }
 .H-shangP>h6,.H-shangP>h5{
 	margin: 0.3rem 0;

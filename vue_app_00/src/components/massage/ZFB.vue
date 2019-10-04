@@ -29,11 +29,7 @@
     
 		 <mt-tab-container-item id="pengyou"> 
      <!-- (4)调用子组件 面板-->
-		 <!-- 顶部导航titlebar -->
-			<titlebar :leftImg="require('../../assets/search.png')" :leftImg2="require('../../assets/yuyin.png')" 
-			:rightImg="require('../../assets/20.png')" :rightImg2="require('../../assets/jia.png')" :tasks="mytasks" :add="myadd"></titlebar>
-			<!--空div 48px-->
-			<div style="margin-top:20px"></div>
+		
 		 <pengyou></pengyou>
 	 </mt-tab-container-item> 
 
@@ -135,11 +131,7 @@ export default {
 			}
 		}	
 	},
-	watch: {
-		active() {
-			this.$store.commit('changeActive',this.active)
-		}
-	},
+	
 	data(){
 		return {
 			active:"shouye",
@@ -153,7 +145,12 @@ export default {
 				 {isSelect:false}
 			]
 		}
-	}
+	},
+	watch: {
+		active() {
+			this.$store.commit('changeActive',this.active)
+		}
+	},
 }
 </script>
 <style scoped>

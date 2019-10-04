@@ -25,13 +25,15 @@ import Cart from "./components/massage/common/Cart.vue"
 import PlistItems from "./components/massage/taobao/PlistItems"
 //GDW提供服务器
 import GDW from "./components/massage/GDW.vue"
-
+//花呗组件
+import HuaBeiX from "./components/massage/zujian/HuaBeiX"
 Vue.use(Router)
 export default new Router({
   routes: [
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
      //淘宝首页
+     {path:'/HBX',component:HuaBeiX},
      {path:'/PLIS/:lid',component:PlistItems,props:true},
     {path:'/GDW',component:GDW},
     {path:'/Cart',component:Cart},
