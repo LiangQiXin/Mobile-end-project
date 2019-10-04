@@ -9,7 +9,7 @@
          <li class="sTitle">
            完善个人资料,让大家认识你!
           </li>
-         <li class="xTitle">欢迎来到好好住</li>
+         <li class="xTitle">欢迎来到支付宝</li>
        </ul>
        <!-- 右侧是图片 -->
        <div class="boxImg">
@@ -22,26 +22,26 @@
       <div class="Me_TBImg1">
         <router-link :to="'/'" class="my_Me_a">
          <div >
-           <img src="@/assets/Me_01.png" alt="">
-           <h5>图片与视频</h5>
+           <img src="@/assets/Me_zhangD01.png" alt="">
+           <h5>账单</h5>
          </div>
         </router-link>
         <router-link :to="'/'" class="my_Me_a"> 
          <div>   
-           <img src="@/assets/Me_02.png" alt="">
-           <h5>我的整屋</h5>
+           <img src="@/assets/ME_Zong.png" alt="">
+           <h5>总资产</h5>
          </div>
         </router-link>
         <router-link :to="'/'" class="my_Me_a">  
          <div>
-           <img src="@/assets/Me_03.png" alt="">
-           <h5>我的文章</h5>
+           <img src="@/assets/C_eBao.png" alt="">
+           <h5>余额</h5>
          </div>
         </router-link> 
         <router-link :to="'/'" class="my_Me_a"> 
          <div>
-           <img src="@/assets/Me_04.png" alt="">
-           <h5>我的回答</h5>
+           <img src="@/assets/yuEbao.png" alt="">
+           <h5>余额宝</h5>
          </div>
         </router-link>  
       </div>
@@ -49,30 +49,30 @@
       <div class="Me_TBImg2"> 
         <router-link :to="'/'" class="my_Me_a">
           <div>
-           <img src="@/assets/Me_05.png" alt="">
-           <h5>草稿箱</h5>
+           <img src="@/assets/ka.png" alt="">
+           <h5>银行卡</h5>
          </div>
         </router-link> 
         <router-link :to="'/'" class="my_Me_a">  
          <div>
-           <img src="@/assets/Me_06.png" alt="">
-           <h5>装修记录</h5>
+           <img src="@/assets/zhiMa.png" alt="">
+           <h5>芝麻信用</h5>
          </div>
         </router-link> 
      </div>
      <!-- 第三层图标 -->
      <div class="Me_TBImg1 Me_TBImg3">
        <div >
-           <img src="@/assets/Me_07.png" alt="">
-           <h5>我的收藏</h5>
+           <img src="@/assets/me_jiebei.png" alt="">
+           <h5>借呗</h5>
          </div>
          <div>
-           <img src="@/assets/Me_08.png" alt="">
-           <h5>浏览记录</h5>
+           <img src="@/assets/MaYi_B.png" alt="">
+           <h5>蚂蚁保险</h5>
          </div>
          <div>
-           <img src="@/assets/Me_09.png" alt="">
-           <h5>关注的内容</h5>
+           <img src="@/assets/Me_kF.png" alt="">
+           <h5>我的客服</h5>
          </div>
          <div>
            <img src="@/assets/Me_10.png" alt="">

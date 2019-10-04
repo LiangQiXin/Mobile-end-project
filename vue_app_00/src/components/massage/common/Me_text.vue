@@ -6,7 +6,7 @@
      <div class="textFlex">
        
        <div>
-         <h3>我的订单</h3>
+         <h3>花呗开通记录</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -17,7 +17,7 @@
      <!-- 二个 -->
      <div class="textFlex">
        <div>
-         <h3>我的积分</h3>
+         <h3>我的权益</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -26,7 +26,7 @@
      <!-- 三个 -->
      <div class="textFlex">
        <div>
-         <h3>我的装修信息</h3>
+         <h3>花呗当面花</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -35,7 +35,7 @@
      <!-- 四个 -->
      <div class="textFlex">
        <div>
-         <h3>申请身份证</h3>
+         <h3>设置首选支付方式</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -44,7 +44,7 @@
      <!-- 五个 -->
      <div class="textFlex">
        <div>
-         <h3>向朋友推荐好好住</h3>
+         <h3>额度设置</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -53,7 +53,7 @@
      <!-- 六个 -->
      <div class="textFlex">
        <div>
-         <h3>帮助与反馈</h3>
+         <h3>自动还款设置</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -62,7 +62,7 @@
      <!-- 七个 -->
      <div class="textFlex">
        <div>
-         <h3>更新与检测</h3>
+         <h3>还款日设置</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -71,7 +71,7 @@
      <!--第八个-->
      <div class="textFlex">
        <div>
-         <h3>加入我们</h3>
+         <h3>相关合同及产品说明</h3>
        </div>
        <div>
          <img src="@/assets/Me_JT2.png" alt="">
@@ -79,7 +79,7 @@
      </div>
      <!-- 最下面的图标  是不是到底了 -->
      <div class="meZhu">
-       <img src="@/assets/Me_02.png" alt="">
+       <img src="@/assets/Me_ZFB.png" alt="">
      </div>
     <div style="height:100px;"></div>
   </div>
@@ -113,7 +113,7 @@ export default {
 .meZhu{
   width: 100%;
   height: 80px;
-  margin: 15px 0 0 150px;
+  margin: 15px 0 0 80px;
 }
 .me_my_a{
   text-decoration: none;

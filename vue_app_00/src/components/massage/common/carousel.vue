@@ -22,9 +22,28 @@
 export default {
  props:["item"],
 	 
- created() {
-	// console.log(this.imgurl)
- }
+//  created() {
+// 	// console.log(this.imgurl)
+// 	this.loadMore();
+//  },
+//  methods: {
+// 		loadMore(){
+// 		var url="data";
+// 		this.axios.get(url).then(res=>{
+// 		//	console.log(res.data.data);
+// 		 var data=res.data.data;
+// 		 this.item=data;
+// 		})
+// 		}
+// 	},
+	// data() {
+	// 	return{
+	// 	   item:[
+	// 		{title1:"",title2:"",tiem1:"",time2:"",img_url:""}
+	// 		] 
+	// 	}
+	// },
+
 }
 </script>
 <style scoped>
@@ -33,10 +52,7 @@ export default {
 	height:100px !important;
 border-bottom:3px solid #d9d9d9;
 }
- img{
-	width:100px;
-	height:60px ;
-}
+ 
 /* 轮播图里面的数据样式 */
 .flex{
 	display: flex;
@@ -47,6 +63,7 @@ border-bottom:3px solid #d9d9d9;
 /*去除list-sytle*/
 .title{
 	list-style: none;
+	padding-left:1rem;
 }
 /*下标题*/
 .xiatitle{
@@ -61,6 +78,8 @@ border-bottom:3px solid #d9d9d9;
 }
 /* 图片 */
 .box>img{
+	width:100px;
+	height:60px ;
 	margin-top:20px;
 	padding-right:20px;
 }

@@ -29,7 +29,7 @@
         </router-link>
         <!-- 右边的文字 -->
         <ul class="my_ul">
-        <li>住友_R9K138G</li>  
+        <li>梁启芯_168</li>  
         <li class="text_bg">  
            <img src="@/assets/Me_title04.png" alt="" class="bg_img2">
             <span>我的徽章</span>

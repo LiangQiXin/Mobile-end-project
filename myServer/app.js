@@ -127,9 +127,9 @@ server.get("/product",(req,res)=>{
 });
 
 //功能二:商品分页显示
-// http://127.0.0.1:8080/product
-// http://127.0.0.1:8080/product?pno=2
-// http://127.0.0.1:8080/product?pno=3&pageSize=5
+// http://127.0.0.1:8080/products
+// http://127.0.0.1:8080/products?pno=2
+// http://127.0.0.1:8080/products?pno=3&pageSize=5
  //1:接收客户请求 /products get
 server.get("/products",(req,res)=>{
   //2:接收客户请求数据
