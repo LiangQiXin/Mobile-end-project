@@ -376,6 +376,7 @@ div.H-shangP:not(:first-child){
 }
 .H-shangP>img{
 	width:100%;
+	height: 70px;
 	margin-bottom: 0.3rem;
 }
 .H-shangP>button{
