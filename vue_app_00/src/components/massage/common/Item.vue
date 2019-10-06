@@ -25,7 +25,7 @@
 		</div>
 
 		<div>
-		<router-link class="mainImg" :to="'/'">
+		<router-link class="mainImg" :to="'/YEB'">
 		<img src="../../../assets/yuEbao.png" alt="">
 		<h6>余额宝</h6>
 			</router-link>
@@ -78,7 +78,7 @@
 	  </div>
 
 		<div>
-		<router-link class="mainImg" :to="'/'">
+		<router-link class="mainImg" :to="'/HBX'">
 		<img src="../../../assets/huabei.png" alt="">
 		<h6>花呗</h6>
 		</router-link>

@@ -27,14 +27,18 @@ import PlistItems from "./components/massage/taobao/PlistItems"
 import GDW from "./components/massage/GDW.vue"
 //花呗组件
 import HuaBeiX from "./components/massage/zujian/HuaBeiX"
+//余额宝组件
+import yuebao from "./components/massage/zujian/yuebao"
+
 Vue.use(Router)
 export default new Router({
   routes: [
     //配置自定义组件路径
     //浏览器:http://127.0.0.1:3001/#/ZFB
-     //淘宝首页
-     {path:'/HBX',component:HuaBeiX},
-     {path:'/PLIS/:lid',component:PlistItems,props:true},
+    {path:'/YEB',component:yuebao},
+    {path:'/HBX',component:HuaBeiX},
+    {path:'/PLIS/:lid',component:PlistItems,props:true},
+      //淘宝首页
     {path:'/GDW',component:GDW},
     {path:'/Cart',component:Cart},
     {path:'/Products',component:Products},

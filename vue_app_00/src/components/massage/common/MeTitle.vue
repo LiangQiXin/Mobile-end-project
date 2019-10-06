@@ -52,7 +52,7 @@ export default {
  
   data() {
     return{
-      scrollTop:0
+      scrollTop:0,
     }
   },
    methods:{
@@ -75,10 +75,10 @@ export default {
   },
    props:["place"],
    created() {
-     this.scroll();
+    
    },
    mounted() {
-
+     this.scroll();
    },
 
 	props:{  //声明父组件接收的数据

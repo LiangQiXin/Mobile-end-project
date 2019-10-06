@@ -16,6 +16,7 @@ import 'vant/lib/index.css';
 
 Vue.use(Vant);
 
+
 //引入Swiper
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'

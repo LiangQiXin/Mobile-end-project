@@ -38,7 +38,7 @@
            <h5>余额</h5>
          </div>
         </router-link> 
-        <router-link :to="'/'" class="my_Me_a"> 
+        <router-link :to="'/YEB'" class="my_Me_a"> 
          <div>
            <img src="@/assets/yuEbao.png" alt="">
            <h5>余额宝</h5>
