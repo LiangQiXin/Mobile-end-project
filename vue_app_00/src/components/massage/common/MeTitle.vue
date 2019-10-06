@@ -1,7 +1,7 @@
 <template>
   <div>
 	  <!-- 导航栏tableBar -->
-		<div class="page-head" ref="toTop">
+		<div class="page-head" ref="toTop" :style="style">
       <div>
         <router-link :to="'/'" >
        <img :src="fristImg" alt="">
@@ -53,6 +53,11 @@ export default {
   data() {
     return{
       scrollTop:0,
+      style:{
+        backgroundColor:'',
+        transition:'',
+        display:'',
+      }
     }
   },
    methods:{
