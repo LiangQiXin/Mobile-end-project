@@ -1,7 +1,7 @@
 <template>
   <div>
 	  <!-- 导航栏tableBar -->
-		<div class="page-head" ref="toTop" :style="style">
+		<div class="page-head" ref="toTop" :style="style01 == 0 ?'transition:all 0.5s linear;background:rgba(94,174,221,1);':'' ">
       <div>
         <router-link :to="'/'" >
        <img :src="fristImg" alt="">
@@ -23,7 +23,7 @@
     <div class="Me_bg">
       <div style="height:80px;"></div>
       <!-- 人物头像左边的图片 -->
-      <div class="my_LuFei" ref="toTop2">
+      <div class="my_LuFei" ref="toTop2" :style="style01 == 0 ?'transition:all .5s linear;display:none;':''">
         <router-link :to="'/'">
         <img src="@/assets/Me_LuFei.jpg" alt="" class="bg_img">
         </router-link>
@@ -53,11 +53,12 @@ export default {
   data() {
     return{
       scrollTop:0,
-      style:{
+        style01:1,
+    /*style: {
         backgroundColor:'',
         transition:'',
         display:'',
-      }
+      } */
     }
   },
    methods:{
@@ -66,14 +67,16 @@ export default {
       var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
       //console.log(scrollTop);
       if(scrollTop>=100) {
-     this.$refs.toTop.style.backgroundColor="rgba(94,174,221,1)";
-    this.$refs.toTop2.style.display="none";
-    this.$refs.toTop.style.transition= "all 0.5s linear";
-      this.$refs.toTop2.style.transition= "all 0.5s linear";
+        this.style01 = 0
+    //  this.$refs.toTop.style.backgroundColor="rgba(94,174,221,1)";
+    // this.$refs.toTop2.style.display="none";
+    // this.$refs.toTop.style.transition= "all 0.5s linear";
+    //   this.$refs.toTop2.style.transition= "all 0.5s linear";
       
      }else{
-        this.$refs.toTop.style.backgroundColor="rgba(94,174,221,0)";
-      this.$refs.toTop2.style.display="";
+      //   this.$refs.toTop.style.backgroundColor="rgba(94,174,221,0)";
+      // this.$refs.toTop2.style.display="";
+      this.style01 = 1
             }
        }  
      }
@@ -83,7 +86,7 @@ export default {
     
    },
    mounted() {
-     this.scroll();
+    this.$nextTick(this.scroll)
    },
 
 	props:{  //声明父组件接收的数据
@@ -106,6 +109,7 @@ export default {
   z-index: 999px;
 	position: fixed;
   border-radius: 3px;
+  
 }
 /*titleBar 的img*/
 .page-head img{
@@ -119,6 +123,7 @@ export default {
   position: absolute;
   top:15px;
   right:12px;
+ 
 }
 /*me的背景图片*/
 .Me_bg{

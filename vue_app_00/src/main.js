@@ -60,11 +60,16 @@ var store=new Vuex.Store({
   },
   mutations:{  //集中修改数据函数属性
     changeActive(state,value) {
-       state.active=value
+      //console.log(value)
+       state.active = value
+        console.log(state.active)
     }
   },
   getters:{   //集中获取数据函数
-
+         change(state){
+           return state.active
+          
+         }
   },
   actions:{  //集中保存异步修改数据函数
 

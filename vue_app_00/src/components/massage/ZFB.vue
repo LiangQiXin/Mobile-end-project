@@ -151,6 +151,9 @@ export default {
 			this.$store.commit('changeActive',this.active)
 		}
 	},
+	created() {
+		   this.active = this.$store.getters.change
+	},
 }
 </script>
 <style scoped>
