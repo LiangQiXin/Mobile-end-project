@@ -147,10 +147,10 @@ export default {
 		}
 	},
 	watch: {
-		active() {
-			this.$store.commit('changeActive',this.active)
-		}
-	},
+	 	active() {
+	 		this.$store.commit('changeActive',this.active)
+	 	}
+	 },
 	created() {
 		   this.active = this.$store.getters.change
 	},

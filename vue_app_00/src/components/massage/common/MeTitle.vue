@@ -1,7 +1,8 @@
 <template>
   <div>
 	  <!-- 导航栏tableBar -->
-		<div class="page-head" ref="toTop" :style="style01 == 0 ?'transition:all 0.5s linear;background:rgba(94,174,221,1);':'' ">
+		<!-- <div class="page_head" ref="toTop" :style="style01 == 0 ?'transition:all 0.5s linear;background:rgba(94,174,221,1);':'' "> -->
+		<div :class="styleClass" ref="toTop" >
       <div>
         <router-link :to="'/'" >
        <img :src="fristImg" alt="">
@@ -59,6 +60,10 @@ export default {
         transition:'',
         display:'',
       } */
+      styleClass:{
+        page_head:true,
+        style_class:false,
+      }
     }
   },
    methods:{
@@ -67,16 +72,25 @@ export default {
       var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
       //console.log(scrollTop);
       if(scrollTop>=100) {
+  //第三种方法
+  this.styleClass.style_class=true;
+  //第二种方法
         this.style01 = 0
+       //第一种方法
     //  this.$refs.toTop.style.backgroundColor="rgba(94,174,221,1)";
     // this.$refs.toTop2.style.display="none";
     // this.$refs.toTop.style.transition= "all 0.5s linear";
     //   this.$refs.toTop2.style.transition= "all 0.5s linear";
       
      }else{
+  //第三种方法
+  this.styleClass.style_class=false;
+  //第二种方法
+      this.style01 = 1
+  //第一种方法
       //   this.$refs.toTop.style.backgroundColor="rgba(94,174,221,0)";
       // this.$refs.toTop2.style.display="";
-      this.style01 = 1
+      
             }
        }  
      }
@@ -99,7 +113,7 @@ export default {
 </script>
 <style scoped>
 /*最外层父元素弹性*/
-.page-head{
+.page_head{
 	display: flex;
   justify-content: flex-end;  /*结尾排放*/
 	align-items: center;
@@ -112,12 +126,12 @@ export default {
   
 }
 /*titleBar 的img*/
-.page-head img{
+.page_head img{
 	width:30px;
 	margin:0 15px 0 0px; 
 }
 /*红点提示*/
-.page-head img.Me_tishi{
+.page_head img.Me_tishi{
   width:10px;
   margin: 0px;
   position: absolute;
@@ -165,5 +179,8 @@ export default {
 .my_JTImg{
   width: 35px;
   margin-left: 150px;
+}
+.style_class{
+  transition:all 0.5s linear;background:rgba(94,174,221,1);
 }
 </style>

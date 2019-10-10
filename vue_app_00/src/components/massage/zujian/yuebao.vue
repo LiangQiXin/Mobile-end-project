@@ -60,7 +60,7 @@ export default {
 	methods: {
 		back() {
 			this.$router.push("/ZFB");
-			this.$store.commit("changeActive","me")
+			//this.$store.commit("changeActive","me")
 		}
 	},
 	created() {
